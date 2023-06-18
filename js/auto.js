@@ -417,3 +417,151 @@
 // };
 
 // console.log(isSquare(0));
+
+// var number = function (array) {
+//   const newArray = [];
+
+//   if (array.length > 0) {
+//     for (let i = 0; i < array.length; i += 1) {
+//       newArray.push(`${i + 1}: ${array[i]}`);
+//     }
+//     return newArray;
+//   }
+
+//   return newArray;
+// };
+
+// console.log(number(['a', 'b', 'c']));
+
+// function getMiddle(s) {
+//   let newS = '';
+
+//   if (s.length % 2 === 0) {
+//     newS = s[s.length / 2 - 1] + s[s.length / 2];
+//     return newS;
+//   } else {
+//     newS = s[Math.floor(s.length / 2)];
+//     return newS;
+//   }
+// }
+
+// console.log(getMiddle('zefro'));
+
+// function solution(str, ending) {
+//   return str.endsWith(ending);
+// }
+
+// console.log(solution('abfc', 'bc'));
+
+// function squareDigits(num) {
+//   const array = num.toString().split('');
+//   let str = '';
+
+//   for (const arrayItem of array) {
+//     str += Math.pow(Number(arrayItem), 2);
+//   }
+//   return str;
+// }
+
+// console.log(squareDigits(3212));
+
+// function isTriangle(a, b, c) {
+//   const isTriangl = a && b && c ? true : false;
+//   return isTriangl;
+// }
+
+// console.log(isTriangle(1, 2, 2));
+
+// console.log(1 && 0 && 2);
+
+// function SeriesSum(n) {
+//   let progres = 1;
+//   let sum = 1;
+
+//   for (let i = 1; i < n; i += 1) {
+//     progres += 3;
+//     sum += 1 / progres;
+//     console.log(progres);
+//   }
+
+//   return sum.toFixed(2).toString();
+// }
+
+// console.log(SeriesSum(1));
+
+// function addStr() {
+//   let str = 'Hello';
+
+//   //   str[2] = 'w';
+
+//   console.log(str[2]);
+// }
+
+// console.log(addStr());
+
+// function removeSmallest(numbers) {
+//   let array = [];
+//   const minItem = Math.min(...numbers);
+
+//   array = [...numbers];
+//   array.splice(numbers.indexOf(minItem), 1);
+
+//   return array;
+// }
+
+// console.log(removeSmallest([5, 3, 2, 1, 4]));
+
+// function order(words) {
+//   let sortStr = '';
+//   let tempWord = '';
+//   const array = words.split(' ');
+//   const arrayNumber = [];
+
+//   // Отримаємо масив чисел з слів
+//   for (let i = 0; i < array.length; i += 1) {
+//     tempWord = array[i];
+
+//     for (let j = 0; j < tempWord.length; j += 1) {
+//       if (isNaN(Number.parseInt(tempWord[j]))) {
+//         continue;
+//       }
+//       arrayNumber.push(Number(tempWord[j]));
+//     }
+//   }
+//   // сортування
+
+//   for (let j = 0; j < array.length; j += 1) {
+//     console.log(j);
+//     for (let i = 0; i < array.length; i += 1) {
+//       if (arrayNumber[i] > arrayNumber[i + 1]) {
+//         array.splice(i + 2, 0, array[i]);
+//         array.splice(i, 1);
+//         arrayNumber.splice(i + 2, 0, arrayNumber[i]);
+//         arrayNumber.splice(i, 1);
+//       }
+//       console.log(arrayNumber);
+//     }
+//   }
+
+//   return (sortStr = array.join(' '));
+// }
+
+// console.log(order('4of Fo1r pe6ople g3ood th5e the2'));
+
+// function order(words) {
+//   var array = words.split(' ');
+//   var sortedArray = [];
+
+//   console.log(array[0].indexOf(1));
+
+//   for (let i = 0; i <= array.length; i++) {
+//     for (let j = 0; j < array.length; j++) {
+//       if (array[j].indexOf(i) >= 0) {
+//         sortedArray.push(array[j]);
+//       }
+//     }
+//   }
+//   return sortedArray.join(' ');
+// }
+
+// console.log(order('4of Fo1r pe6ople g3ood th5e the2'));
