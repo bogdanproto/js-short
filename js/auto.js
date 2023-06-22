@@ -891,11 +891,47 @@
 // console.log(bookWithTitle);
 // console.log(bookByAuthor);
 
-const firstArray = [26, 94, 36, 18];
-const secondArray = [17, 61, 23];
-const thirdArray = [17, 26, 94, 61, 36, 23, 18];
-// Change code below this line
+// const firstArray = [26, 94, 36, 18];
+// const secondArray = [17, 61, 23];
+// const thirdArray = [17, 26, 94, 61, 36, 23, 18];
+// // Change code below this line
 
-const eachElementInFirstIsEven = firstArray.every(number => number % 2 === 0);
+// const eachElementInFirstIsEven = firstArray.every(number => number % 2 === 0);
 
-console.log(eachElementInFirstIsEven);
+// console.log(eachElementInFirstIsEven);
+
+// "din"      =>  "((("
+// "recede"   =>  "()()()"
+// "Success"  =>  ")())())"
+// "(( @"     =>  "))(("
+
+// function duplicateEncode(word) {
+//   const array = word.toLowerCase().split('');
+
+//   const newArray = array.map((item, index, array) => {
+//     const tempArray = [...array];
+//     tempArray.splice(index, 1);
+
+//     if (tempArray.includes(item)) {
+//       return (item = ')');
+//     }
+//     return (item = '(');
+//   });
+
+//   return newArray.join('');
+// }
+
+// function duplicateEncode(word) {
+//   return word
+//     .toLowerCase()
+//     .split('')
+//     .map(function (a, i, w) {
+//       console.log(w.indexOf(a));
+//       console.log(w.lastIndexOf(a));
+//       console.log(w.indexOf(a) == w.lastIndexOf(a));
+//       return w.indexOf(a) == w.lastIndexOf(a) ? '(' : ')';
+//     })
+//     .join('');
+// }
+
+// console.log(duplicateEncode('Success'));
