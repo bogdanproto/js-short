@@ -935,3 +935,258 @@
 // }
 
 // console.log(duplicateEncode('Success'));
+
+// const avaragePoints = array => array.reduce((sum, number) => (sum += number));
+
+// function getAvarage(array, countFn) {
+//   console.table(array);
+//   console.log('Quntity of students:', array.length);
+
+//   console.log(countFn(array));
+// }
+
+// // getAvarage([2, 3, 4], avaragePoints);
+
+// getAvarage([2, 3, 4], arrayCall => arrayCall.reduce((sum, number) => (sum += number)));
+
+// const users = [
+//   {
+//     name: 'Moore Hensley',
+//     email: 'moorehensley@indexia.com',
+//     eyeColor: 'blue',
+//     friends: ['Sharron Pace'],
+//     isActive: false,
+//     balance: 2811,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sharlene Bush',
+//     email: 'sharlenebush@tubesys.com',
+//     eyeColor: 'blue',
+//     friends: ['Briana Decker', 'Sharron Pace'],
+//     isActive: true,
+//     balance: 3821,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Ross Vazquez',
+//     email: 'rossvazquez@xinware.com',
+//     eyeColor: 'green',
+//     friends: ['Marilyn Mcintosh', 'Padilla Garrison', 'Naomi Buckner'],
+//     isActive: false,
+//     balance: 3793,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Elma Head',
+//     email: 'elmahead@omatom.com',
+//     eyeColor: 'green',
+//     friends: ['Goldie Gentry', 'Aisha Tran'],
+//     isActive: true,
+//     balance: 2278,
+//     gender: 'female',
+//   },
+//   {
+//     name: 'Carey Barr',
+//     email: 'careybarr@nurali.com',
+//     eyeColor: 'blue',
+//     friends: ['Jordan Sampson', 'Eddie Strong', 'Adrian Cross'],
+//     isActive: true,
+//     balance: 3951,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Blackburn Dotson',
+//     email: 'blackburndotson@furnigeer.com',
+//     eyeColor: 'brown',
+//     friends: ['Jacklyn Lucas', 'Linda Chapman', 'Adrian Cross', 'Solomon Fokes'],
+//     isActive: false,
+//     balance: 1498,
+//     gender: 'male',
+//   },
+//   {
+//     name: 'Sheree Anthony',
+//     email: 'shereeanthony@kog.com',
+//     eyeColor: 'brown',
+//     friends: ['Goldie Gentry', 'Briana Decker'],
+//     isActive: true,
+//     balance: 2764,
+//     gender: 'female',
+//   },
+// ];
+
+// const getSortedFriends = users =>
+//   users
+//     .flatMap(user => user.friends)
+//     .filter((friend, index, array) => array.indexOf(friend) === index)
+//     .sort((a, b) => a.localeCompare(b));
+
+// const tweets = [
+//   { id: '000', likes: 5, tags: ['js', 'nodejs'] },
+//   { id: '001', likes: 2, tags: ['html', 'css'] },
+//   { id: '002', likes: 17, tags: ['html', 'js', 'nodejs'] },
+//   { id: '003', likes: 8, tags: ['css', 'react'] },
+//   { id: '004', likes: 0, tags: ['js', 'nodejs', 'react', 'TEST'] },
+// ];
+
+// const getTags = tweets =>
+//   tweets.reduce((allTags, tweet) => {
+//     allTags.push(...tweet.tags);
+
+//     return allTags;
+//   }, []);
+
+// const tags = getTags(tweets);
+
+// Винесемо callback-функцію окремо, а в reducе передамо посилання на неї.
+// Це стандартна практика, якщо callback-функція досить велика.
+
+// Якщо в об'єкті-акумуляторі acc відсутня своя властивість з ключем tag,
+// то створюємо її і записуємо їй значення 0.
+// В іншому випадку збільшуємо значення на 1.
+// const getTagStats = (acc, tag) => {
+//   if (!acc.hasOwnProperty(tag)) {
+//     acc[tag] = 0;
+//   }
+
+//   acc[tag] += 1;
+
+//   return acc;
+// };
+
+// Початкове значення акумулятора - це порожній об'єкт {}
+// console.log(tags);
+
+// const countTags = tags =>
+//   tags.reduce((acc, tag) => {
+//     if (!acc.hasOwnProperty(tag)) {
+//       acc[tag] = 0;
+//     }
+
+//     acc[tag] += 1;
+
+//     return acc;
+//   }, {});
+
+// const tagCount = countTags(tags);
+// console.log(tagCount);
+
+// const products = [
+//   { name: 'Radar', price: 1300, quantity: 4 },
+//   { name: 'Scanner', price: 2700, quantity: 3 },
+//   { name: 'Droid', price: 400, quantity: 7 },
+//   { name: 'Grip', price: 1200, quantity: 9 },
+// ];
+
+// const getProductPrice = productName => products.find(product => productName === product.name).price;
+
+// console.log(getProductPrice('Scanner'));
+
+// if (true) {
+//   str = 'Block';
+//   if (true) {
+//     str = 'Home';
+//   }
+// }
+// let str = 'Global';
+// str = 'Home';
+// let str = 'Block';
+
+// "din"      =>  "((("
+// "recede"   =>  "()()()"
+// "Success"  =>  ")())())"
+// "(( @"     =>  "))(("
+
+// const array = [1, 5, 6, 7, 8, 5, 9];
+
+// console.log(array.indexOf(5));
+// console.log(array.lastIndexOf(5));
+
+// function transformTo(str) {
+//   return str
+//     .toLowerCase()
+//     .split('')
+//     .map((item, index, array) => {
+//       return array.indexOf(item) !== array.lastIndexOf(item) ? ')' : '(';
+//     })
+//     .join('');
+// }
+// console.log(transformTo('Receder'));
+
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+// const getCount = str =>
+//   Number(
+//     str
+//       .split('')
+//       .reduce(
+//         (totalVowel, item) =>
+//           ['a', 'e', 'i', 'o', 'u'].includes(item) ? (totalVowel += 1) : totalVowel,
+//         0
+//       )
+//   );
+
+// console.log(getCount('Woe wilil consider'));
+
+// function expandedForm(num) {
+//   const array = num.toString().split('');
+//   const newArray = [];
+
+//   array.forEach((number, index, array) => {
+//     if (number > 0) {
+//       newArray.push(number * Math.pow(10, array.length - 1 - index));
+//     }
+//   });
+//   return newArray.join(' + ');
+// }
+
+// const expandedForm = n =>
+//   n
+//     .toString()
+//     .split('')
+//     .reverse()
+//     .map((a, i) => a * Math.pow(10, i));
+// // .filter(a => a > 0)
+// // .reverse()
+// // .join(' + ');
+
+// console.log(expandedForm(70304));
+
+// function wave(str) {
+//   const tempStr = str.split('');
+//   return str
+//     .split('')
+//     .map((item, index, array) => {
+//       let tempStr = [...array];
+//       tempStr[index] = tempStr[index].toUpperCase();
+//       return tempStr.join('');
+//     })
+//     .filter((item, index) => item[index] !== ' ');
+
+//   //   for (let i = 0; i < str.length; i += 1) {
+//   //     if (tempStr[i] === ' ') {
+//   //       continue;
+//   //     }
+//   //     tempStr[i] = tempStr[i].toUpperCase();
+//   //     array.push(tempStr.join(''));
+//   //     tempStr[i] = tempStr[i].toLowerCase();
+//   //   }
+
+//   //   return array;
+// }
+
+// function wave(str) {
+//   return str
+//     .split('')
+//     .map((l, i, a) => {
+//       let c = a.slice();
+//       c[i] = c[i].toUpperCase();
+//       return c.join('');
+//     })
+//     .filter((w, i) => {
+//       console.log(w);
+//       return w[i] === ' ';
+//     });
+// }
+
+// console.log(wave('two words'));
