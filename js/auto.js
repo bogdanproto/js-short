@@ -1190,3 +1190,361 @@
 // }
 
 // console.log(wave('two words'));
+
+//   for (let i = iterable.length - 1; i > 0; i -= 1) {
+//     if (iterable[i] === iterable[i - 1]) {
+//       iterable.splice(i, 1);
+//     }
+//   }
+
+// var uniqueInOrder = function (iterable) {
+//   if (typeof iterable !== 'object') {
+//     iterable = iterable.split('');
+//   }
+//   return iterable.filter((item, index, array) => array[index] !== array[index + 1]);
+// };
+
+// console.log(uniqueInOrder('AAAABBBCCDAABBB'));
+// console.log(uniqueInOrder([1, 2, 2, 3, 3]));
+
+// function checkObj(obj, checkProp) {
+//   console.log(obj[checkProp]);
+//   // Змініть код лише під цим рядком
+//   if (obj.hasOwnProperty(checkProp)) {
+//     return obj.checkProp;
+//   }
+//   return 'Not Found';
+//   // Змініть код лише над цим рядком
+// }
+
+// console.log(checkObj({ gift: 'pony', pet: 'kitten', bed: 'sleigh' }, 'gift'));
+
+// Налаштування
+// const recordCollection = {
+//   2548: {
+//     albumTitle: 'Slippery When Wet',
+//     artist: 'Bon Jovi',
+//     tracks: ['Let It Rock', 'You Give Love a Bad Name'],
+//   },
+//   2468: {
+//     albumTitle: '1999',
+//     artist: 'Prince',
+//     tracks: ['1999', 'Little Red Corvette'],
+//   },
+//   1245: {
+//     artist: 'Robert Palmer',
+//     tracks: [],
+//   },
+//   5439: {
+//     albumTitle: 'ABBA Gold',
+//   },
+// };
+
+// // Змініть код лише під цим рядком
+// function updateRecords(records, id, prop, value) {
+//   if (value === '') {
+//     delete records[id][prop];
+//   }
+//   if (prop !== 'track' && value !== '') {
+//     records[id][prop] = value;
+//   }
+
+//   //   if (prop === 'track' && value !== '') {
+//   //     if (!records[id].hasOwnProperty(prop)) {
+//   //       records[id][prop] = [];
+//   //     }
+//   //   }
+
+//   return records;
+// }
+
+// console.log(updateRecords(recordCollection, 5439, 'tracks', 'Take a Chance on Me'));
+
+// function towerBuilder(nFloors) {
+//   return [...Array(nFloors)].map(
+//     (item, index) =>
+//       ' '.repeat(nFloors - index - 1) + '*'.repeat(index * 2 + 1) + ' '.repeat(nFloors - index - 1)
+//   );
+// }
+
+//   console.log(array);
+
+//   //   for (let i = 0; i < nFloors; i += 1) {
+//   //     array[i].push(...' '.repeat(nFloors - i - 1));
+//   //     array[i].unshift(...' '.repeat(nFloors - i - 1));
+//   //     finalArray.push(array[i].join(''));
+//   //   }
+
+//   return finalArray;
+// }
+
+// console.log(towerBuilder(6));
+
+// ['     *     ', '    ***    ', '   *****   ', '  *******  ', ' ********* ', '***********'];
+
+// const myArray = [];
+
+// // Змініть код лише під цим рядком
+// for (let i = 9; i > 0; i -= 1) {
+//   console.log(i);
+//   if (i % 2 !== 0) {
+//     myArray.push(i);
+//     console.log(i);
+//   }
+//   console.log(i);
+// }
+
+// let total = 1;
+
+// function multiply(arr, n) {
+//   if (n <= 0) {
+//     return 1;
+//   } else {
+//     console.log(n);
+//     console.log(total);
+//     total = multiply(arr, n - 1) * arr[n - 1];
+//     return total;
+//   }
+// }
+// let total = 0;
+
+// function sum(n) {
+//   if (n <= 0) {
+//     return;
+//   }
+//   total += n;
+//   n -= 1;
+//   console.log(total);
+//   sum(n);
+//   return total;
+// }
+
+// console.log(sum(3));
+
+// Налаштування
+// const contacts = [
+//   {
+//     firstName: 'Akira',
+//     lastName: 'Laine',
+//     number: '0543236543',
+//     likes: ['Pizza', 'Coding', 'Brownie Points'],
+//   },
+//   {
+//     firstName: 'Harry',
+//     lastName: 'Potter',
+//     number: '0994372684',
+//     likes: ['Hogwarts', 'Magic', 'Hagrid'],
+//   },
+//   {
+//     firstName: 'Sherlock',
+//     lastName: 'Holmes',
+//     number: '0487345643',
+//     likes: ['Intriguing Cases', 'Violin'],
+//   },
+//   {
+//     firstName: 'Kristian',
+//     lastName: 'Vos',
+//     number: 'unknown',
+//     likes: ['JavaScript', 'Gaming', 'Foxes'],
+//   },
+// ];
+
+// function lookUpProfile(name, prop) {
+//   for (const contact of contacts) {
+//     if (contact.firstName === name) {
+//       if (contact.hasOwnProperty(prop)) {
+//         return contact[prop];
+//       } else {
+//         return 'No such property';
+//       }
+//     }
+//   }
+//   return 'No such contact';
+//   // Змініть код лише над цим рядком
+// }
+
+// console.log(lookUpProfile('Kristian', 'lastName'));
+
+// const array = [];
+
+// function countdown(n) {
+//   if (n < 1) {
+//     return [];
+//   } else {
+//     const array = countdown(n - 1);
+//     array.push(n);
+//     console.log(array);
+//     return array;
+//   }
+// }
+// console.log(countdown(5));
+
+// let array;
+// const array2 = [2, 5];
+
+// array = array2;
+
+// console.log(array);
+
+// function rangeOfNumbers(startNum, endNum) {
+//   if (endNum < startNum) {
+//     return [];
+//   } else {
+//     const array = rangeOfNumbers(startNum, endNum - 1);
+//     array.push(endNum);
+//     return array;
+//   }
+// }
+
+// console.log(rangeOfNumbers(2, 16));
+
+// function findOdd(a) {
+//   return a.find(item => !!(a.filter(number => item === number).length % 2));
+// }
+
+// console.log(findOdd([1, 2, 2, 3, 3, 3, 4, 3, 3, 3, 2, 2, 1]));
+
+// function duplicateCount(text) {
+//   const array = text.toLowerCase().split('');
+//   const obj = {};
+//   let total = 0;
+
+//   for (const item of array) {
+//     if (obj.hasOwnProperty(item)) {
+//       obj[item] += 1;
+//     } else {
+//       obj[item] = 1;
+//     }
+//   }
+
+//   for (const key in obj) {
+//     if (obj[key] > 1) {
+//       total += 1;
+//     }
+//   }
+
+//   return total;
+// }
+
+// function duplicateCount(text) {
+//   return text
+//     .toLowerCase()
+//     .split('')
+//     .filter(function (val, i, arr) {
+//       console.log('i', i);
+//       console.log('arr.indexOf(val', arr.indexOf(val));
+//       console.log('arr.lastIndexOf(val)', arr.lastIndexOf(val));
+//       return arr.indexOf(val) !== i && arr.lastIndexOf(val) === i;
+//     });
+// }
+
+// console.log(duplicateCount('bcba1111'));
+
+// .reduce((totalRepeat, symbol, index, array) => {
+//   if (array.filter(item => item === symbol).length > 1) {
+//     return (totalRepeat += 1);
+//   } else {
+//     return totalRepeat;
+//   }
+// }, 0);
+
+// const array = [2, 3, 4, 6, 2, 1, 4, 6, 7, 2, 3, 3, 3];
+
+// console.log(
+//   array.filter(
+//     (item, index, array) => array.lastIndexOf(item) === index && array.indexOf(item) !== index
+//   )
+// );
+
+// function findUniq(arr) {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     if (arr[i] === arr[arr.length - 1 - i] && arr.indexOf(arr[i]) !== arr.lastIndexOf(arr[i])) {
+//       continue;
+//     }
+
+//     if (arr[i] !== arr[i - 1] && arr[i] !== arr[i + 1]) {
+//       return arr[i];
+//     } else {
+//       return arr[arr.length - 1 - i];
+//     }
+//   }
+// }
+
+// console.log(findUniq([0, 1, 0]));
+
+// const HIGH_TEMPERATURES = {
+//   yesterday: 75,
+//   today: 77,
+//   tomorrow: 80,
+// };
+
+// // Змініть код лише під цим рядком
+
+// const { yesterday, today, tommorrow } = HIGH_TEMPERATURES;
+
+// let users = {
+//   Alan: {
+//     age: 27,
+//     online: true,
+//   },
+//   Jeff: {
+//     age: 32,
+//     online: true,
+//   },
+//   Sarah: {
+//     age: 48,
+//     online: true,
+//   },
+//   Ryan: {
+//     age: 19,
+//     online: true,
+//   },
+// };
+
+// function isEveryoneHere(userObj) {
+//   // Змініть код лише під цим рядком
+//   if (
+//     userObj.hasOwnProperty('Alan') &&
+//     userObj.hasOwnProperty('Jeff') &&
+//     userObj.hasOwnProperty('Sarah') &&
+//     userObj.hasOwnProperty('Ryan')
+//   ) {
+//     return true;
+//   } else {
+//     return false;
+//   }
+
+//   // Змініть код лише над цим рядком
+// }
+
+// console.log(isEveryoneHere(users));
+
+// function likes(names) {
+//   if (names.length > 3) {
+//     return `${names[0]} ${names[1]} and ${names.length - 2} others like this`;
+//   } else if (names.length === 3) {
+//     return `${names[0]}, ${names[1]} and ${names[2]} like this`;
+//   } else if (names.length === 2) {
+//     return `${names[0]} and ${names[1]} like this`;
+//   } else if (names.length === 1) {
+//     return `${names[0]} likes this`;
+//   } else {
+//     return 'no one likes this';
+//   }
+// }
+
+// console.log(likes(['Alex']));
+
+// function count(string) {
+//   return string.split('').reduce((obj, item) => {
+//     obj.hasOwnProperty(item) ? (obj[item] += 1) : (obj[item] = 1);
+//     return obj;
+//   }, {});
+// }
+
+// console.log(count('abccccca'));
+
+// (function (x) {
+//   delete x;
+//   return x;
+// })(1);
