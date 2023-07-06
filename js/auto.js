@@ -1640,23 +1640,211 @@
 
 // console.log(newCar);
 
-class Car {
-  constructor({ brand, model, price }) {
-    this.brand = brand;
-    this.model = model;
-    this.price = price;
-  }
-  // Change code below this line
-  getPrice() {
-    return this.price;
-  }
+// class Car {
+//   constructor({ brand, model, price }) {
+//     this.brand = brand;
+//     this.model = model;
+//     this.price = price;
+//   }
+//   // Change code below this line
+//   getPrice() {
+//     return this.price;
+//   }
 
-  changePrice(newPrice) {
-    this.price = newPrice;
-  }
+//   changePrice(newPrice) {
+//     this.price = newPrice;
+//   }
 
-  // Change code above this line
-}
+//   // Change code above this line
+// }
 
-const newCar = new Car({ brand: 'bmw', model: 'X5', price: '10000' });
-console.log(newCar);
+// const newCar = new Car({ brand: 'bmw', model: 'X5', price: '10000' });
+// console.log(newCar);
+
+// class Car {
+//   // Change code below this line
+//   #price;
+
+//   static #MAX_PRICE = 50000;
+
+//   constructor({ price }) {
+//     this.#price = price;
+//   }
+
+//   get price() {
+//     return this.#price;
+//   }
+
+//   set price(newPrice) {
+//     if (newPrice <= Car.#MAX_PRICE) {
+//       this.#price = newPrice;
+//     }
+//   }
+//   // Change code above this line
+// }
+
+// const audi = new Car({ price: 35000 });
+// console.log(audi.price); // 35000
+
+// audi.price = 49000;
+// console.log(audi.price); // 49000
+
+// audi.price = 51000;
+// console.log(audi.price); // 49000
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+
+// class Admin extends User {
+//   // Change code below this line
+
+//   static AccessLevel = {
+//     BASIC: 'basic',
+//     SUPERUSER: 'superuser',
+//   };
+
+//   constructor({ email, accessLevel }) {
+//     super(email);
+//     this.accessLevel = accessLevel;
+//   }
+
+//   // Change code above this line
+// }
+
+// const mango = new Admin({
+//   email: 'mango@mail.com',
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+// });
+
+// console.log(mango);
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
+
+// class User {
+//   email;
+
+//   constructor(email) {
+//     this.email = email;
+//   }
+
+//   get email() {
+//     return this.email;
+//   }
+
+//   set email(newEmail) {
+//     this.email = newEmail;
+//   }
+// }
+// class Admin extends User {
+//   // Change code below this line
+
+//   static AccessLevel = {
+//     BASIC: 'basic',
+//     SUPERUSER: 'superuser',
+//   };
+
+//   constructor({ email, accessLevel, blacklistedEmails }) {
+//     super(email);
+//     this.accessLevel = accessLevel;
+//     this.blacklistedEmails = blacklistedEmails;
+//   }
+
+//   blacklist(email) {
+//     this.blacklistedEmails.push(email);
+//   }
+
+//   isBlacklisted(email) {
+//     return this.blacklistedEmails.includes(email);
+//   }
+
+//   // Change code above this line
+// }
+
+// const mango = new Admin({
+//   email: 'mango@mail.com',
+//   accessLevel: Admin.AccessLevel.SUPERUSER,
+//   blacklistedEmails: [],
+// });
+
+// console.log(mango.email); // "mango@mail.com"
+// console.log(mango.accessLevel); // "superuser"
+// console.log(mango.blacklistedEmails);
+
+// mango.blacklist('poly@mail.com');
+// mango.blacklist('colloly@mail.com');
+// console.log(mango.blacklistedEmails); // ["poly@mail.com"]
+// console.log(mango.isBlacklisted('mango@mail.com')); // false
+// // console.log(mango.isBlacklisted('poly@mail.com')); // true
+
+// let quoteSample = '3 blind mice.';
+// let myRegex = /[^0-9aeiou]/gi; // Змініть цей рядок
+// let result = quoteSample.match(myRegex); // Змініть цей рядок
+// let test = myRegex.test(quoteSample);
+
+// console.log(result);
+// console.log(test);
+
+// let reCriminals = /C+/g; // Змініть цей рядок
+// console.log('CCC'.match(reCriminals));
+
+// let hello = '   Hello, World!  ';
+// let wsRegex = /^\s+|\s+$/g; // Змініть цей рядок
+// let result = hello.replace(wsRegex, ''); // Змініть цей рядок
+
+// console.log(result);
+
+//return the total number of smiling faces in the array
+// function countSmileys(arr) {
+//   return arr.reduce((total, value) => {
+//     if (/[)D]/.test(value)) {
+//       return (total += 1);
+//     }
+//     return total;
+//   }, 0);
+// }
+
+// console.log(countSmileys([';o(', ':)', ';o(', ';>', ';oD', ':)', ':D']));
+
+// let value = 'z'.charCodeAt(0) - 96;
+
+// function high(x) {
+//   return x.split(' ').reduce(
+//     (highWord, word) => {
+//       let wordLength = word
+//         .split('')
+//         .reduce((total, letter) => (total += letter.charCodeAt(0) - 96), 0);
+//       if (highWord[1] < wordLength) {
+//         highWord.splice(0, 2, word, wordLength);
+//       }
+//       return highWord;
+//     },
+//     ['', 0]
+//   )[0];
+// }
+// console.log(high('abad root focus'));
+
+// const sum = (a, b) => a + b;
+// function mult(a, b) {
+//   return a * b;
+// }
+
+// function calc(a, b, operation) {
+//   return operation(a, b);
+// }
+
+// console.log(calc(2, 3, sum));
+// console.log(calc(2, 3, mult));
