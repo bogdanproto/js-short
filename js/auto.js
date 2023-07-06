@@ -1548,3 +1548,115 @@
 //   delete x;
 //   return x;
 // })(1);
+
+// let testStr = 'freeCodeCamp';
+// let testRegex = /dre/;
+// testRegex.test(testStr);
+
+// console.log(testRegex.test(testStr));
+
+// 'Hello, World!'.match(/Hello/);
+// let ourStr = 'Repeat, Repeat, Repeat';
+// let ourRegex = /repeat/gi;
+// let test = ourStr.match(ourRegex);
+
+// console.log(test);
+
+// let quoteSample = 'Blueberry 3.141592653s are delicious.';
+// let myRegex = /[h-s2-6]/gi; // Змініть цей рядок
+// let result = quoteSample.match(myRegex); // Змініть цей рядок
+
+// console.log(result);
+
+// const fn = function () {
+//   console.log('Hi');
+// };
+
+// fn();
+
+// fn.prototype.add = function () {
+//   console.log('book');
+// };
+
+// console.log(fn.prototype);
+
+// const historyService = {
+//   orders: [
+//     { email: 'jacob@hotmail.com', dish: 'Burrito' },
+//     { email: 'solomon@topmail.net', dish: 'Burger' },
+//     { email: 'artemis@coldmail.net', dish: 'Pizza' },
+//     { email: 'solomon@topmail.net', dish: 'Apple pie' },
+//     { email: 'jacob@hotmail.com', dish: 'Taco' },
+//   ],
+//   // Change code below this line
+//   getOrdersLog() {
+//     return this.orders.map(order => `email: ${order.email} dish: ${order.dish}`).join(' - ');
+//   },
+//   getEmails() {
+//     const emails = this.orders.map(order => order.email);
+//     const uniqueEmails = new Set(emails);
+//     return [...uniqueEmails];
+//   },
+//   getOrdersByEmail(email) {
+//     return this.orders.filter(order => order.email === email);
+//   },
+//   // Change code above this line
+// };
+
+// console.log(historyService.getEmails());
+
+// const arr = [1, 1, 2, 3, 4, 5, 2, 1];
+// console.log(arr);
+
+// const test = new Set(arr);
+// console.log(test);
+
+// const parent = {
+//   name: 'Stacey',
+//   surname: 'Moore',
+//   age: 54,
+//   heritage: 'Irish',
+// };
+// // Change code below this line
+
+// const child = Object.create(parent);
+
+// // Change code above this line
+// child.name = 'Jason';
+// child.age = 27;
+
+// console.log(child.surname);
+
+// class Car {
+//   // Change code below this line
+//   constructor(brand, model, price) {
+//     (this.brand = brand), (this.model = model), (this.price = price);
+//   }
+
+//   // Change code above this line
+// }
+
+// const newCar = new Car('bmw', 'X5', '10000');
+
+// console.log(newCar);
+
+class Car {
+  constructor({ brand, model, price }) {
+    this.brand = brand;
+    this.model = model;
+    this.price = price;
+  }
+  // Change code below this line
+  getPrice() {
+    return this.price;
+  }
+
+  changePrice(newPrice) {
+    this.price = newPrice;
+  }
+
+  // Change code above this line
+}
+
+const newCar = new Car({ brand: 'bmw', model: 'X5', price: '10000' });
+console.log(newCar);
