@@ -1848,3 +1848,449 @@
 
 // console.log(calc(2, 3, sum));
 // console.log(calc(2, 3, mult));
+
+// вкладки – це масив заголовків до кожного сайту, відкритого у вікні
+// class Window {
+//   constructor(tabs) {
+//     this.tabs = tabs;
+//   }
+
+//   join(otherWindow) {
+//     this.tabs = this.tabs.concat(otherWindow.tabs);
+//     return this;
+//   }
+
+//   tabOpen(newTab) {
+//     this.tabs.push(newTab);
+//     return this;
+//   }
+
+//   tabClose(index) {
+//     this.tabs.splice(index, 1);
+//     return this;
+//   }
+// }
+
+// const workWindow = new Window(['GMail', 'Inbox', 'Work mail', 'Docs', 'freeCodeCamp']);
+// const socialWindow = new Window(['FB', 'Gitter', 'Reddit', 'Twitter', 'Medium']);
+// const videoWindow = new Window(['Netflix', 'YouTube', 'Vimeo', 'Vine']); //
+
+// console.log('workWindow', workWindow);
+// console.log('socialWindow', socialWindow);
+// console.log('videoWindow', videoWindow);
+
+// const finalTabs = socialWindow
+//   .tabOpen('Root')
+//   .join(videoWindow.tabClose(2))
+//   .join(workWindow.tabClose(1).tabOpen('Toor'));
+
+// console.log(finalTabs.tabs);
+
+// [
+//   'FB',
+//   'Gitter',
+//   'Reddit',
+//   'Twitter',
+//   'Medium',
+//   'new tab',
+//   'Netflix',
+//   'YouTube',
+//   'Vine',
+//   'GMail',
+//   'Work mail',
+//   'Docs',
+//   'freeCodeCamp',
+//   'new tab',
+// ];
+
+// Глобальна змінна
+// const bookList = [
+//   'The Hound of the Baskervilles',
+//   'On The Electrodynamics of Moving Bodies',
+//   'Philosophiæ Naturalis Principia Mathematica',
+//   'Disquisitiones Arithmeticae',
+// ];
+
+// // Змініть код під цим рядком
+// function add(bookList, bookName) {
+//   const newArray = [...bookList];
+//   newArray.push(bookName);
+//   return newArray;
+
+//   // Змініть код над цим рядком
+// }
+
+// // Змініть код під цим рядком
+// function remove(bookName) {
+//   const book_index = bookList.indexOf(bookName);
+//   if (book_index >= 0) {
+//     bookList.splice(book_index, 1);
+//     return bookList;
+
+//     // Змініть код над цим рядком
+//   }
+// }
+
+// console.log(add(bookList, 'A Brief History of Time'));
+
+// Глобальна змінна
+// const watchList = [
+//   {
+//     Title: 'Inception',
+//     Year: '2010',
+//     Rated: 'PG-13',
+//     Released: '16 Jul 2010',
+//     Runtime: '148 min',
+//     Genre: 'Action, Adventure, Crime',
+//     Director: 'Christopher Nolan',
+//     Writer: 'Christopher Nolan',
+//     Actors: 'Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy',
+//     Plot: 'A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.',
+//     Language: 'English, Japanese, French',
+//     Country: 'USA, UK',
+//     Awards: 'Won 4 Oscars. Another 143 wins & 198 nominations.',
+//     Poster:
+//       'http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg',
+//     Metascore: '74',
+//     imdbRating: '8.8',
+//     imdbVotes: '1,446,708',
+//     imdbID: 'tt1375666',
+//     Type: 'movie',
+//     Response: 'True',
+//   },
+//   {
+//     Title: 'Interstellar',
+//     Year: '2014',
+//     Rated: 'PG-13',
+//     Released: '07 Nov 2014',
+//     Runtime: '169 min',
+//     Genre: 'Adventure, Drama, Sci-Fi',
+//     Director: 'Christopher Nolan',
+//     Writer: 'Jonathan Nolan, Christopher Nolan',
+//     Actors: 'Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow',
+//     Plot: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+//     Language: 'English',
+//     Country: 'USA, UK',
+//     Awards: 'Won 1 Oscar. Another 39 wins & 132 nominations.',
+//     Poster:
+//       'http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg',
+//     Metascore: '74',
+//     imdbRating: '8.6',
+//     imdbVotes: '910,366',
+//     imdbID: 'tt0816692',
+//     Type: 'movie',
+//     Response: 'True',
+//   },
+//   {
+//     Title: 'The Dark Knight',
+//     Year: '2008',
+//     Rated: 'PG-13',
+//     Released: '18 Jul 2008',
+//     Runtime: '152 min',
+//     Genre: 'Action, Adventure, Crime',
+//     Director: 'Christopher Nolan',
+//     Writer:
+//       'Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)',
+//     Actors: 'Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine',
+//     Plot: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.',
+//     Language: 'English, Mandarin',
+//     Country: 'USA, UK',
+//     Awards: 'Won 2 Oscars. Another 146 wins & 142 nominations.',
+//     Poster:
+//       'http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg',
+//     Metascore: '82',
+//     imdbRating: '9.0',
+//     imdbVotes: '1,652,832',
+//     imdbID: 'tt0468569',
+//     Type: 'movie',
+//     Response: 'True',
+//   },
+//   {
+//     Title: 'Batman Begins',
+//     Year: '2005',
+//     Rated: 'PG-13',
+//     Released: '15 Jun 2005',
+//     Runtime: '140 min',
+//     Genre: 'Action, Adventure',
+//     Director: 'Christopher Nolan',
+//     Writer:
+//       'Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)',
+//     Actors: 'Christian Bale, Michael Caine, Liam Neeson, Katie Holmes',
+//     Plot: 'After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.',
+//     Language: 'English, Urdu, Mandarin',
+//     Country: 'USA, UK',
+//     Awards: 'Nominated for 1 Oscar. Another 15 wins & 66 nominations.',
+//     Poster:
+//       'http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg',
+//     Metascore: '70',
+//     imdbRating: '8.3',
+//     imdbVotes: '972,584',
+//     imdbID: 'tt0372784',
+//     Type: 'movie',
+//     Response: 'True',
+//   },
+//   {
+//     Title: 'Avatar',
+//     Year: '2009',
+//     Rated: 'PG-13',
+//     Released: '18 Dec 2009',
+//     Runtime: '162 min',
+//     Genre: 'Action, Adventure, Fantasy',
+//     Director: 'James Cameron',
+//     Writer: 'James Cameron',
+//     Actors: 'Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang',
+//     Plot: 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.',
+//     Language: 'English, Spanish',
+//     Country: 'USA, UK',
+//     Awards: 'Won 3 Oscars. Another 80 wins & 121 nominations.',
+//     Poster:
+//       'http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg',
+//     Metascore: '83',
+//     imdbRating: '7.9',
+//     imdbVotes: '876,575',
+//     imdbID: 'tt0499549',
+//     Type: 'movie',
+//     Response: 'True',
+//   },
+// ];
+
+// // Змініть код лише під цим рядком
+
+// const ratings = watchList.map(i => (i = { title: i.Title, rating: i.imdbRating }));
+
+// // Змініть код лише над цим рядком
+
+// console.log(ratings);
+// // title: watchList[i]['Title'], rating: watchList[i]['imdbRating']
+
+// function add(a, i, array) {
+//   return (a = i * 2);
+// }
+
+// Array.prototype.myMap = function (callback) {
+//   const newArray = [];
+
+//   for (let i = 0; i < this.length; i += 1) {
+//     newArray.push(callback(this[i], i, this));
+//   }
+
+//   return newArray;
+// };
+
+// const newArray = [1, 3, 5];
+// console.log(newArray.__proto__);
+
+// console.log(newArray.myMap(add));
+
+// Глобальна змінна
+// const watchList = [
+//   {
+//     Title: 'Inception',
+//     Year: '2010',
+//     Rated: 'PG-13',
+//     Released: '16 Jul 2010',
+//     Runtime: '148 min',
+//     Genre: 'Action, Adventure, Crime',
+//     Director: 'Christopher Nolan',
+//     Writer: 'Christopher Nolan',
+//     Actors: 'Leonardo DiCaprio, Joseph Gordon-Levitt, Elliot Page, Tom Hardy',
+//     Plot: 'A thief, who steals corporate secrets through use of dream-sharing technology, is given the inverse task of planting an idea into the mind of a CEO.',
+//     Language: 'English, Japanese, French',
+//     Country: 'USA, UK',
+//     Awards: 'Won 4 Oscars. Another 143 wins & 198 nominations.',
+//     Poster:
+//       'http://ia.media-imdb.com/images/M/MV5BMjAxMzY3NjcxNF5BMl5BanBnXkFtZTcwNTI5OTM0Mw@@._V1_SX300.jpg',
+//     Metascore: '74',
+//     imdbRating: '8.8',
+//     imdbVotes: '1,446,708',
+//     imdbID: 'tt1375666',
+//     Type: 'movie',
+//     Response: 'True',
+//   },
+//   {
+//     Title: 'Interstellar',
+//     Year: '2014',
+//     Rated: 'PG-13',
+//     Released: '07 Nov 2014',
+//     Runtime: '169 min',
+//     Genre: 'Adventure, Drama, Sci-Fi',
+//     Director: 'Christopher Nolan',
+//     Writer: 'Jonathan Nolan, Christopher Nolan',
+//     Actors: 'Ellen Burstyn, Matthew McConaughey, Mackenzie Foy, John Lithgow',
+//     Plot: "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+//     Language: 'English',
+//     Country: 'USA, UK',
+//     Awards: 'Won 1 Oscar. Another 39 wins & 132 nominations.',
+//     Poster:
+//       'http://ia.media-imdb.com/images/M/MV5BMjIxNTU4MzY4MF5BMl5BanBnXkFtZTgwMzM4ODI3MjE@._V1_SX300.jpg',
+//     Metascore: '74',
+//     imdbRating: '8.6',
+//     imdbVotes: '910,366',
+//     imdbID: 'tt0816692',
+//     Type: 'movie',
+//     Response: 'True',
+//   },
+//   {
+//     Title: 'The Dark Knight',
+//     Year: '2008',
+//     Rated: 'PG-13',
+//     Released: '18 Jul 2008',
+//     Runtime: '152 min',
+//     Genre: 'Action, Adventure, Crime',
+//     Director: 'Christopher Nolan',
+//     Writer:
+//       'Jonathan Nolan (screenplay), Christopher Nolan (screenplay), Christopher Nolan (story), David S. Goyer (story), Bob Kane (characters)',
+//     Actors: 'Christian Bale, Heath Ledger, Aaron Eckhart, Michael Caine',
+//     Plot: 'When the menace known as the Joker wreaks havoc and chaos on the people of Gotham, the caped crusader must come to terms with one of the greatest psychological tests of his ability to fight injustice.',
+//     Language: 'English, Mandarin',
+//     Country: 'USA, UK',
+//     Awards: 'Won 2 Oscars. Another 146 wins & 142 nominations.',
+//     Poster:
+//       'http://ia.media-imdb.com/images/M/MV5BMTMxNTMwODM0NF5BMl5BanBnXkFtZTcwODAyMTk2Mw@@._V1_SX300.jpg',
+//     Metascore: '82',
+//     imdbRating: '9.0',
+//     imdbVotes: '1,652,832',
+//     imdbID: 'tt0468569',
+//     Type: 'movie',
+//     Response: 'True',
+//   },
+//   {
+//     Title: 'Batman Begins',
+//     Year: '2005',
+//     Rated: 'PG-13',
+//     Released: '15 Jun 2005',
+//     Runtime: '140 min',
+//     Genre: 'Action, Adventure',
+//     Director: 'Christopher Nolan',
+//     Writer:
+//       'Bob Kane (characters), David S. Goyer (story), Christopher Nolan (screenplay), David S. Goyer (screenplay)',
+//     Actors: 'Christian Bale, Michael Caine, Liam Neeson, Katie Holmes',
+//     Plot: 'After training with his mentor, Batman begins his fight to free crime-ridden Gotham City from the corruption that Scarecrow and the League of Shadows have cast upon it.',
+//     Language: 'English, Urdu, Mandarin',
+//     Country: 'USA, UK',
+//     Awards: 'Nominated for 1 Oscar. Another 15 wins & 66 nominations.',
+//     Poster:
+//       'http://ia.media-imdb.com/images/M/MV5BNTM3OTc0MzM2OV5BMl5BanBnXkFtZTYwNzUwMTI3._V1_SX300.jpg',
+//     Metascore: '70',
+//     imdbRating: '8.3',
+//     imdbVotes: '972,584',
+//     imdbID: 'tt0372784',
+//     Type: 'movie',
+//     Response: 'True',
+//   },
+//   {
+//     Title: 'Avatar',
+//     Year: '2009',
+//     Rated: 'PG-13',
+//     Released: '18 Dec 2009',
+//     Runtime: '162 min',
+//     Genre: 'Action, Adventure, Fantasy',
+//     Director: 'James Cameron',
+//     Writer: 'James Cameron',
+//     Actors: 'Sam Worthington, Zoe Saldana, Sigourney Weaver, Stephen Lang',
+//     Plot: 'A paraplegic marine dispatched to the moon Pandora on a unique mission becomes torn between following his orders and protecting the world he feels is his home.',
+//     Language: 'English, Spanish',
+//     Country: 'USA, UK',
+//     Awards: 'Won 3 Oscars. Another 80 wins & 121 nominations.',
+//     Poster:
+//       'http://ia.media-imdb.com/images/M/MV5BMTYwOTEwNjAzMl5BMl5BanBnXkFtZTcwODc5MTUwMw@@._V1_SX300.jpg',
+//     Metascore: '83',
+//     imdbRating: '7.9',
+//     imdbVotes: '876,575',
+//     imdbID: 'tt0499549',
+//     Type: 'movie',
+//     Response: 'True',
+//   },
+// ];
+
+// function getRating(watchList) {
+//   // Змініть код лише під цим рядком
+//   let averageRating;
+
+//   averageRating = watchList
+//     .filter(value => value.Director === 'Christopher Nolan')
+//     .reduce((average, value, index, array) => {
+//       average += Number(value.imdbRating);
+//       if (index === array.length - 1) {
+//         average = average / (index + 1);
+//         return average;
+//       }
+//       return average;
+//     }, 0);
+
+//   // Змініть код лише над цим рядком
+//   return averageRating;
+// }
+
+// console.log(getRating(watchList));
+
+// function splitify(str) {
+//   // Змініть код лише під цим рядком
+
+//   return str.split(/\W/);
+
+//   // Змініть код лише над цим рядком
+// }
+
+// console.log(splitify('Hello World,I-am code'));
+
+// function sentensify(str) {
+//   // Змініть код лише під цим рядком
+
+//   return str.split('-').join(' ');
+
+//   // Змініть код лише над цим рядком
+// }
+
+// console.log(sentensify('May-the-force-be-with-you'));
+
+// Змініть код лише під цим рядком
+// function urlSlug(title) {
+//   return title
+//     .toLowerCase()
+//     .split(/\W+/)
+//     .filter(value => value !== '')
+//     .join('-');
+// }
+// // Змініть код лише над цим рядком
+// console.log(urlSlug(' Winter Is  Coming'));
+
+// function booWho(bool) {
+//   return Boolean(bool);
+// }
+
+// console.log(booWho(null));
+
+// function bouncer(arr) {
+//   return [...arr].filter(value => Boolean(value));
+// }
+
+// console.log(bouncer([7, 'ate', '', false, 9]));
+
+// function mutation(arr) {
+//   return arr[1]
+//     .toLowerCase()
+//     .split('')
+//     .every(value => arr[0].toLowerCase().includes(value));
+// }
+
+// console.log(mutation(['Mary', 'Army']));
+
+// function chunkArrayInGroups(arr, size) {
+//   const newArray = [];
+
+//   for (let i = 0; arr.slice(i * size, size + i * size).length > 0; i += 1) {
+//     newArray.push(arr.slice(i * size, size + i * size));
+//   }
+//   return newArray;
+// }
+
+// console.log(chunkArrayInGroups([0, 1, 2, 3, 4, 5, 6, 7, 8], 5));
+
+function frankenSplice(arr1, arr2, n) {
+  const newArr = [...arr2];
+  newArr.splice(n, 0, ...arr1);
+  return newArr;
+}
+
+console.log(frankenSplice([1, 2, 3], [4, 5, 6], 1));
