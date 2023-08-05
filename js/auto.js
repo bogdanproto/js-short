@@ -3195,41 +3195,95 @@
 
 // console.log(toUnderscore('Movies7AndBooks'));
 
-function maxZeroSequence(arr) {
-  let longestArr = [];
-  let tempArr = [];
-  let sum = 0;
+// function maxZeroSequence(arr) {
+//   let longestArr = [];
+//   let tempArr = [];
+//   let sum = 0;
 
-  for (let j = 0; j < arr.length; j += 1) {
-    tempArr = [];
-    sum = 0;
-    for (let i = j; i < arr.length; i += 1) {
-      sum += arr[i];
-      tempArr.push(arr[i]);
+//   for (let j = 0; j < arr.length; j += 1) {
+//     tempArr = [];
+//     sum = 0;
+//     for (let i = j; i < arr.length; i += 1) {
+//       sum += arr[i];
+//       tempArr.push(arr[i]);
 
-      if (!sum && longestArr.length <= tempArr.length) {
-        longestArr = [];
-        longestArr.push(...tempArr);
-      }
-    }
-  }
+//       if (!sum && longestArr.length <= tempArr.length) {
+//         longestArr = [];
+//         longestArr.push(...tempArr);
+//       }
+//     }
+//   }
 
-  return longestArr;
-}
+//   return longestArr;
+// }
 
-console.log(
-  maxZeroSequence([
-    12, -42, 78, -18, 44, 96, -17, -22, 56, -87, 89, -91, -19, 7, -38, -44, -12, 34, 25, -75, -4,
-    26, 80, 75, 6, -2, 0, -27, -16, -38, -23, 85, 24, -43, -24, 5, 66, 21, 8, -67, -5, -18, 12, -98,
-    -43, 61, 54, -49, 6, -42, 7, -55, 49, 96, -32, -52, 78, 40, -79, -25, 32, 94, -85, -28, -24, 44,
-    -2, -61, -75, -16, -7, -14, -30, 64, -20, -49, 73, -77, -92, 62, -54, -90, 10, -76, -5, -1, -94,
-    -72, -53, -77, 17, -43, 7, 18, -45, -55, -70, 42, 87, -39, -95, 94, -74, -78, -88, 11, 80, 13,
-    -19, 25, 14, -68, -74, -6, 42, -64, -8, -22, -63, 94, -83, 57, 26, 20, -62, 34, 83, -16, -96,
-    50, 99, 95, 9, -85, -55, -75, 81, 89, 95, -34, 56, -13, 58, 92, 26, 86, -75, -39, -52, 45, 41,
-    68, 85, 91, -17, -93, 85, 83, 31, 18, -57, -30, -23, -89, -97, -38, 87, -58, -60, -11, 75, 15,
-    15, -48, 7, -3, 80, -58, -4, -70, 82, -2, 45, -15, -18, -31, 5, -53, 12, 8, 85, -41, 92, -99,
-    -73, -28, 4, -94, -32, -9, 79, -39, -28, 99, 45, 39,
-  ])
-);
+// console.log(
+//   maxZeroSequence([
+//     12, -42, 78, -18, 44, 96, -17, -22, 56, -87, 89, -91, -19, 7, -38, -44, -12, 34, 25, -75, -4,
+//     26, 80, 75, 6, -2, 0, -27, -16, -38, -23, 85, 24, -43, -24, 5, 66, 21, 8, -67, -5, -18, 12, -98,
+//     -43, 61, 54, -49, 6, -42, 7, -55, 49, 96, -32, -52, 78, 40, -79, -25, 32, 94, -85, -28, -24, 44,
+//     -2, -61, -75, -16, -7, -14, -30, 64, -20, -49, 73, -77, -92, 62, -54, -90, 10, -76, -5, -1, -94,
+//     -72, -53, -77, 17, -43, 7, 18, -45, -55, -70, 42, 87, -39, -95, 94, -74, -78, -88, 11, 80, 13,
+//     -19, 25, 14, -68, -74, -6, 42, -64, -8, -22, -63, 94, -83, 57, 26, 20, -62, 34, 83, -16, -96,
+//     50, 99, 95, 9, -85, -55, -75, 81, 89, 95, -34, 56, -13, 58, 92, 26, 86, -75, -39, -52, 45, 41,
+//     68, 85, 91, -17, -93, 85, 83, 31, 18, -57, -30, -23, -89, -97, -38, 87, -58, -60, -11, 75, 15,
+//     15, -48, 7, -3, 80, -58, -4, -70, 82, -2, 45, -15, -18, -31, 5, -53, 12, 8, 85, -41, 92, -99,
+//     -73, -28, 4, -94, -32, -9, 79, -39, -28, 99, 45, 39,
+//   ])
+// );
 
 // [-13, 58, 92, 26, 86, -75, -39, -52, 45, 41, 68, 85, 91, -17, -93, 85, 83, 31, 18, -57, -30, -23, -89, -97, -38, 87, -58, -60, -11, 75, 15, 15, -48, 7, -3, 80, -58, -4, -70, 82, -2, 45, -15, -18, -31, 5, -53, 12, 8, 85, -41, 92, -99, -73, -28, 4, -94, -32]
+
+// function search(n, root) {
+//   console.log(n);
+//   console.log(root);
+// }
+
+// const n = 444;
+// const root = Node {
+//   value: 666,
+//   left: Node { value: 555, left: null, right: null },
+//   right: Node { value: 444, left: null, right: null }
+// }
+//     console.log(search(n, root));
+
+// function maxSum(root) {
+//   console.log(root.value);
+//   maxSum();
+
+//   return;
+// }
+
+// const root = {
+//   value: 5,
+//   left: {
+//     value: -22,
+//     left: { value: 9, left: undefined, right: undefined },
+//     right: { value: 50, left: undefined, right: undefined },
+//   },
+//   right: {
+//     value: 11,
+//     left: { value: 9, left: undefined, right: undefined },
+//     right: { value: 2, left: undefined, right: undefined },
+//   },
+// };
+
+// console.log(maxSum(root));
+
+// //     17
+// //    /  \
+// //   3   -10
+// //  /    /  \
+// // 2    16   1
+// //          /
+// //         13
+
+// function scramble(str1, str2) {
+//   let alph = str1.split('').reduce((p, c) => {
+//     return (p[c] = (p[c] || 0) + 1), p;
+//   }, {});
+
+//   return str2.split('').every(v => alph[v]-- > 0);
+// }
+
+// console.log(scramble('scraiptjvx', 'javascript'));
