@@ -3287,3 +3287,343 @@
 // }
 
 // console.log(scramble('scraiptjvx', 'javascript'));
+
+// const root = {
+//   value: 5,
+//   left: {
+//     value: -22,
+//     left: { value: 9, left: undefined, right: undefined },
+//     right: { value: 50, left: undefined, right: undefined },
+//   },
+//   right: {
+//     value: 11,
+//     left: { value: 90, left: undefined, right: undefined },
+//     right: { value: 2, left: undefined, right: undefined },
+//   },
+// };
+
+// function maxSum(root) {
+//   if (!root) {
+//     return 0;
+//   }
+
+//   let tempSum = 0;
+//   let sum = null;
+//   const rootNumber = root.value;
+//   traverseTree(root);
+
+//   function traverseTree(root) {
+//     let currentValue;
+//     if (!root) {
+//       return;
+//     }
+
+//     tempSum += root.value;
+
+//     if (!root.left && !root.rigth) {
+//       if (tempSum > sum || sum === null) {
+//         sum = tempSum;
+//       }
+//       return root.value;
+//     }
+
+//     currentValue = traverseTree(root.left);
+//     tempSum -= currentValue;
+//     if (root.value === rootNumber) {
+//       tempSum = rootNumber;
+//     }
+//     currentValue = traverseTree(root.right);
+//     tempSum -= currentValue;
+//     if (root.value === rootNumber) {
+//       tempSum = rootNumber;
+//     }
+//   }
+//   return sum;
+// }
+
+// function maxSum(root, currentSum) {
+//   if (root == null || root == undefined) return 0;
+//   if (!currentSum) currentSum = 0;
+
+//   //check left
+//   let leftSide = maxSum(root.left);
+//   //check right
+//   let rightSide = maxSum(root.right);
+
+//   //compare leftSide to rightSide
+
+//   let LR = Math.max(leftSide, rightSide) + root.value;
+
+//   return LR;
+// }
+// console.log(maxSum(root));
+
+// function firstNonRepeatingLetter(s) {
+//   const arrayTemp = s.toLowerCase().split('');
+
+//   return (
+//     s
+//       .split('')
+//       .find(
+//         (item, index, array) => array.indexOf(item.toLowerCase()) === arrayTemp.lastIndexOf(item)
+//       ) ?? ''
+//   );
+// }
+
+// console.log(firstNonRepeatingLetter('sTrreeSttS'));
+
+// const newDate = new Date();
+
+// console.dir(newDate.getUTCMinutes());
+
+// Change value of isSuccess variable to call resolve or reject
+// const promise = new Promise((resolve, reject) => {
+//   setTimeout(() => {
+//     resolve(5);
+//   }, 2000);
+// });
+
+// console.dir(
+//   promise.then(value => {
+//     console.log(value); // 5
+//     return value * 2;
+//   })
+// );
+
+//     .then(value => {
+//     console.log(value); // 10
+//     return value * 3;
+//   })
+//   .then(value => {
+//     console.log(value); // 30
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   })
+//   .finally(() => {
+//     console.log('Final task');
+//   });
+
+// const fetchUserFromServer = username => {
+//   return new Promise((resolve, reject) => {
+//     console.log(`Fetching data for ${username}`);
+
+//     setTimeout(() => {
+//       // Change value of isSuccess variable to simulate request status
+//       const isSuccess = true;
+
+//       if (isSuccess) {
+//         resolve('success value');
+//       } else {
+//         reject('error');
+//       }
+//     });
+//   }, 2000);
+// };
+
+// fetchUserFromServer('Mango')
+//   .then(user => console.log(user))
+//   .catch(error => console.error(error));
+
+// function digitize(n) {
+//   return n
+//     .toString()
+//     .split('')
+//     .reverse()
+//     .map(item => Number(item));
+// }
+
+// console.log(digitize(35231));
+
+// const promice = fetch('https://jsonplaceholder.typicode.com/users')
+//   .then(response => {
+//     return response.json();
+//   })
+//   .then(data => {
+//     console.log(data);
+//   })
+//   .catch(error => {
+//     console.log(error);
+//   });
+
+// const arr = [1, 2, 3, 4, 5];
+
+// console.log(arr.map(caalback));
+
+// function caalback(item) {
+//   return item * 2;
+// }
+
+// const boxNine = document.querySelector('#pixel-to-watch9');
+
+// const options = {
+//   root: null,
+//   rootMargin: '0px',
+//   threshold: 0.5,
+// };
+
+// const observer = new IntersectionObserver(onLog, options);
+// observer.observe(boxNine);
+
+// function onLog(entries) {
+//   console.log(entries);
+
+//   if (entries[0].intersectionRatio > 0) {
+//     console.log('I am seing object');
+//   }
+// }
+
+// function searchSumForK(arr, k) {
+//   let startNum = 0;
+//   let endNum = arr.length - 1;
+//   let sum = null;
+
+//   for (let i = 0; i < arr.length; i += 1) {
+//     sum = arr[startNum] + arr[endNum];
+//     if (sum === k) {
+//       break;
+//     } else if (sum > k) {
+//       endNum -= 1;
+//     } else if (sum < k) {
+//       startNum += 1;
+//     }
+//   }
+//   return [arr[startNum], arr[endNum]];
+// }
+
+// console.log(searchSumForK([-3, -1, 4, 5, 8, 11, 14, 16], 7));
+
+// =====================
+// |   Density Chart    |
+// ======================
+// | Honey   | H | 1.36 |
+// | Water   | W | 1.00 |
+// | Alcohol | A | 0.87 |
+// | Oil     | O | 0.80 |
+// ----------------------
+
+// function separateLiquids(glass) {
+//   const liquids = {
+//     H: 1.36,
+//     W: 1.0,
+//     A: 0.87,
+//     O: 0.8,
+//     height: null,
+//     weight: null,
+//   };
+
+//   liquids.height = glass.length;
+//   liquids.weight = glass.length ? glass[0].length : null;
+//   const newGlass = [];
+
+//   const smoothy = glass
+//     .reduce((acc, item) => {
+//       acc.push(...item);
+//       return acc;
+//     }, [])
+//     .sort((a, b) => liquids[a] - liquids[b]);
+
+//   for (let i = 0; i < smoothy.length; i += liquids.weight) {
+//     newGlass.push(smoothy.slice(i, liquids.weight + i));
+//   }
+
+//   console.log('Smooty', smoothy);
+
+//   return newGlass;
+// }
+
+// console.dir(separateLiquids([]));
+
+//     s:  c o d e w a r s   = codewars
+// part1:  c   d   w         = cdw
+// part2:    o   e   a r s = oears
+
+// function isMerge(s, part1, part2) {
+//   const isEmpty = !s && !part1 && !part2;
+//   if (isEmpty) {
+//     return true;
+//   }
+
+//   const firstPart = part1.split('');
+//   const secondPart = part2.split('');
+
+//   return s
+//     ? s.split('').every(item => {
+//         for (let i = 0; i <= firstPart.length; i += 1) {
+//           if (item === firstPart[i]) {
+//             if (item === secondPart[i]) {
+//               secondPart.splice(i, 1);
+//               return true;
+//             }
+//             firstPart.splice(i, 1);
+//             return true;
+//           }
+//         }
+//         for (let i = 0; i <= secondPart.length; i += 1) {
+//           console.log('i', i);
+//           console.log('Item', item);
+//           console.log('secondPart[i]', secondPart[i]);
+//           console.log(secondPart);
+//           if (item === secondPart[i] && i > 0) {
+//             return false;
+//           } else if (item === secondPart[i]) {
+//             secondPart.splice(i, 1);
+//             return true;
+//           }
+//         }
+//       })
+//     : false;
+// }
+
+// console.log(isMerge('codewars', 'cwdr', 'oeas'));
+
+// function solve(s) {
+//   let operat = '+';
+//   return s.split('');
+// }
+
+// console.log(solve('u-(v-w-(x+y)+m)-z'));
+
+// // "u-v+w+x+y-z"
+
+// var s = 'Hello {foo} - {foobar} make me a {bar}... {foo}!!?';
+// var o = {
+//   bar: 'sandwich {foo}',
+//   foo: 'Jack',
+// };
+
+// // "Hello Jack - make me a sandwich"
+
+// var format = function (str, { foo, bar }) {
+//   str = str.replaceAll('{foo}', foo);
+//   str = str.replaceAll('{bar}', bar);
+//   return str;
+// };
+// console.log(format(s, o));
+
+var wordWrap = function (str) {
+  let path = 24;
+  let i = 2;
+  return str.length === 25
+    ? str
+    : str.split('').map((item, index, array) => {
+        if (index === path + 1 && array[index] === ' ') {
+          console.log('test');
+          path = path + 24;
+          return '\n' + item;
+        }
+        if (index === path) {
+          if (array[index + 1] === ' ') {
+            return item;
+          } else {
+            path = path + 24;
+            return '-\n' + item;
+          }
+        }
+        return item;
+      });
+  // .join('');
+};
+
+console.log(wordWrap('hWO5X J2 qiLI7 eloo7vaZ5O Cj1YbKk35yK vXV FrRnA  WW0XwM Z'));
+// '1234567890123456789012345\n 1234567890'
