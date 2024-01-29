@@ -3601,29 +3601,392 @@
 // };
 // console.log(format(s, o));
 
-var wordWrap = function (str) {
-  let path = 24;
-  let i = 2;
-  return str.length === 25
-    ? str
-    : str.split('').map((item, index, array) => {
-        if (index === path + 1 && array[index] === ' ') {
-          console.log('test');
-          path = path + 24;
-          return '\n' + item;
-        }
-        if (index === path) {
-          if (array[index + 1] === ' ') {
-            return item;
-          } else {
-            path = path + 24;
-            return '-\n' + item;
-          }
-        }
-        return item;
-      });
-  // .join('');
-};
+// var wordWrap = function (str) {
+//   let path = 24;
+//   let i = 2;
+//   return str.length === 25
+//     ? str
+//     : str.split('').map((item, index, array) => {
+//         if (index === path + 1 && array[index] === ' ') {
+//           console.log('test');
+//           path = path + 24;
+//           return '\n' + item;
+//         }
+//         if (index === path) {
+//           if (array[index + 1] === ' ') {
+//             return item;
+//           } else {
+//             path = path + 24;
+//             return '-\n' + item;
+//           }
+//         }
+//         return item;
+//       });
+//   // .join('');
+// };
 
-console.log(wordWrap('hWO5X J2 qiLI7 eloo7vaZ5O Cj1YbKk35yK vXV FrRnA  WW0XwM Z'));
-// '1234567890123456789012345\n 1234567890'
+// console.log(wordWrap('hWO5X J2 qiLI7 eloo7vaZ5O Cj1YbKk35yK vXV FrRnA  WW0XwM Z'));
+// // '1234567890123456789012345\n 1234567890'
+
+// async function fetchUser() {
+//   try {
+//     const response = await fetch('https://restcountries.com/v3.1/nme/Ukraine');
+
+//     if (!response.ok) {
+//       throw new Error(response.statusText);
+//     }
+//     const data = await response.json();
+//     console.log(data);
+//   } catch (err) {
+//     console.log(err);
+//   }
+// }
+
+// fetchUser();
+
+// const x = false;
+// const y = 1;
+// const z = 5;
+
+// const result = x && y;
+
+// console.log(result); // false
+
+// const arr = [1, 2, 3, [4, 5, [6, 7]], [8, 9]];
+// const arrFlated = [];
+
+// function arrFlat(arraySample) {
+//   arraySample.map(item => {
+//     if (Array.isArray(item)) {
+//       return arrFlat(item);
+//     }
+//     arrFlated.push(item);
+//   });
+// }
+
+// arrFlat(arr);
+
+// console.log(arrFlated);
+
+// function logThis() {
+//   //   this.desc = 'logger';
+//   console.log(this);
+// }
+// new logThis();
+
+// const arrTest = [
+//   {
+//     owner: {
+//       id: '111',
+//       phone: '12-12-12',
+//     },
+//     isPhone: true,
+//   },
+//   {
+//     owner: {
+//       id: '111',
+//       phone: '12-12-12',
+//     },
+//     isPhone: true,
+//   },
+//   {
+//     owner: {
+//       id: '222',
+//       phone: '12-12-12',
+//     },
+//     isPhone: true,
+//   },
+
+//   {
+//     owner: {
+//       id: '333',
+//       phone: '12-12-12',
+//     },
+//     isPhone: false,
+//   },
+//   {
+//     owner: {
+//       id: '222',
+//       phone: '12-12-12',
+//     },
+//     isPhone: true,
+//   },
+// ];
+
+// function hendler(arr) {
+//   const arrSet = [];
+//   return arr.filter(item => {
+//     if (arrSet.includes(item.owner.id)) {
+//       return false;
+//     }
+//     arrSet.push(item.owner.id);
+//     return item;
+//   });
+// }
+
+// console.log(hendler(arrTest));
+
+// const arrTest = [
+//   {
+//     id: '111',
+//     phone: 'Kite',
+
+//     isPhone: true,
+//   },
+//   {
+//     id: '111',
+//     phone: 'Core',
+
+//     isPhone: true,
+//   },
+//   {
+//     id: '222',
+//     phone: 'Sling',
+
+//     isPhone: true,
+//   },
+
+//   {
+//     id: '333',
+//     phone: 'Cab',
+
+//     isPhone: false,
+//   },
+//   {
+//     id: '222',
+//     phone: 'Rock',
+
+//     isPhone: true,
+//   },
+// ];
+
+// function hendler(arr) {
+//   const mapSet = new Map();
+//   arr.forEach(element => {
+//     mapSet.set(element.id, element.phone);
+//   });
+
+//   const id = [...mapSet].map(([id, phone]) => id);
+
+//   return id;
+// }
+
+// console.log(hendler(arrTest));
+
+// function validator(value, schema) {
+//   if (!schema) {
+//     return true;
+//   }
+
+//   const checks = {
+//     type: function (value, check) {
+//       if (check !== 'email') {
+//         return typeof value === check ? true : `${value} isn't a ${check}`;
+//       }
+//       return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value) ? true : `${value} isn't a ${check}`;
+//     },
+
+//     minLength: function (value, check) {
+//       if (typeof value !== 'string') {
+//         return `${value} isn't a string`;
+//       }
+//       return value?.length >= check ? true : `${value} should be more than ${check} symbol`;
+//     },
+
+//     maxLength: function (value, check) {
+//       if (typeof value !== 'string') {
+//         return `${value} isn't a string`;
+//       }
+//       return value?.length <= check ? true : `${value} should be less than ${check} symbol`;
+//     },
+//   };
+
+//   const typeOfChecks = Object.keys(schema);
+
+//   const isValid = typeOfChecks.reduce((answer, key) => {
+//     if (answer !== true) {
+//       return answer;
+//     }
+//     return (answer = checks[key](value, schema[key]));
+//   }, true);
+
+//   return isValid;
+// }
+
+// const isValid = validator(2, { type: 'number' });
+
+// console.log(isValid);
+
+// const initialFields = {
+//   name: {
+//     value: '123',
+//     error: null,
+//     schemaValidation: { type: 'string', minLength: 6 },
+//   },
+//   email: {
+//     value: '456',
+//     error: null,
+//     schemaValidation: { type: 'email' },
+//   },
+// };
+
+// const tag = Object.keys(initialFields)
+//   .map(key => `test`)
+//   .join(' | ');
+
+// console.log(tag);
+
+// class Queue {
+//   constructor() {
+//     this.queue = {};
+//     this.head = 0;
+//     this.end = 0;
+//   }
+
+//   addToQueue(item) {
+//     this.queue[this.end] = item;
+//     this.end += 1;
+//   }
+
+//   exitFromQueue() {
+//     if (!this.isQueueEmpty) {
+//       return null;
+//     }
+//     const exitedItem = this.queue[this.head];
+//     delete this.queue[this.head];
+//     this.head += 1;
+//     return exitedItem;
+//   }
+
+//   showQueue() {
+//     return this.queue;
+//   }
+
+//   isQueueEmpty() {
+//     return Object.keys(this.queue).length === 0;
+//   }
+// }
+
+// const line = new Queue();
+
+// line.addToQueue('Bogdan');
+// line.addToQueue('Olek');
+// line.addToQueue('Olya');
+
+// line.exitFromQueue();
+// line.exitFromQueue();
+// line.addToQueue('Roma');
+
+// line.exitFromQueue();
+
+// console.log(line.showQueue());
+
+// class Bank {
+//   constructor() {
+//     this.clients = new Queue();
+//   }
+
+//   addNewClient(name) {
+//     this.clients.addToQueue(name);
+//   }
+
+//   removeClient() {
+//     return this.clients.exitFromQueue();
+//   }
+
+//   showLine() {
+//     console.log(this.clients.isQueueEmpty());
+//     return this.clients.queue;
+//   }
+
+//   processedClients() {
+//     while (!this.clients.isQueueEmpty()) {
+//       console.log(`Processed ${this.removeClient()}`);
+//     }
+//   }
+// }
+
+// const bank = new Bank();
+
+// bank.addNewClient('Bogdan');
+// bank.addNewClient('Olya');
+// bank.addNewClient('Olek');
+
+// console.log(bank.showLine());
+
+// bank.processedClients();
+
+// class Node {
+//   constructor(data = null) {
+//     this.data = data;
+//     this.next = null;
+//   }
+// }
+
+// class LinkedList {
+//   constructor() {
+//     this.head = null;
+//   }
+
+//   insertAtStart(node) {
+//     const newNode = new Node(node);
+//     newNode.next = this.head;
+//     this.head = newNode;
+//   }
+
+//   insertAtEnd(node) {
+//     const newNode = new Node(node);
+
+//     if (!this.head) {
+//       this.head = newNode;
+//     } else {
+//       let curNode = this.head;
+
+//       while (curNode.next) {
+//         curNode = curNode.next;
+//       }
+//       curNode.next = newNode;
+//     }
+//   }
+
+//   showList() {
+//     let curNode = this.head;
+
+//     while (curNode) {
+//       console.log(curNode.data);
+//       curNode = curNode.next;
+//     }
+//   }
+// }
+
+// const list = new LinkedList();
+
+// list.insertAtStart(5);
+// list.insertAtStart(10);
+
+// console.log(list);
+
+// console.log(list.showList());
+
+const people = [
+  {
+    name: 'Olek',
+    age: 13,
+  },
+  {
+    name: 'Bogdan',
+    age: 39,
+  },
+  {
+    name: 'Olya',
+    age: 40,
+  },
+];
+
+const hasPeople = new Map();
+
+people.forEach(({ name, age }) => hasPeople.set(name, age));
+
+console.log(hasPeople);
+
+console.log(hasPeople.get('Olek'));

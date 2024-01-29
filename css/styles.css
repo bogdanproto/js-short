@@ -1,6 +1,20 @@
+:root {
+  --color-bcg: grey;
+  --color-text: white;
+}
+
+[dark] {
+  --color-bcg: white;
+  --color-text: grey;
+}
+
 .tree {
-  background-color: grey;
+  background-color: var(--color-bcg);
   padding: 40px;
+}
+
+.text {
+  color: var(--color-text);
 }
 
 .element {
