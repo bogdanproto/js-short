@@ -4357,3 +4357,67 @@
 // getData(0)
 //   .then(item => console.log(item))
 //   .catch(error => console.log(error));
+
+// const sortBuble = arr => {
+//   for (let i = 0; i < arr.length - 1; i += 1) {
+//     for (let j = 0; j < arr.length - i - 1; j += 1) {
+//       if (arr[j] < arr[j + 1]) {
+//         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+//       }
+//     }
+//   }
+
+//   return arr;
+// };
+
+// console.log(sortBuble([2, 5, 6, 2, 1, 4, 8, 5, 4, 4, 0, 7, 5, 7, 9]));
+
+// const sortByInsert = arr => {
+//   for (let i = 1; i < arr.length; i += 1) {
+//     let key = arr[i];
+//     let j = i - 1;
+
+//     while (j >= 0 && key < arr[j]) {
+//       arr[j + 1] = arr[j];
+//       j -= 1;
+//     }
+//     arr[j + 1] = key;
+//   }
+
+//   return arr;
+// };
+
+// console.log(sortByInsert([2, 5, 6, 2, 1, 4, 8, 5, 4, 4, 0, 7, 5, 7, 9]));
+
+// const selectionSort = arr => {
+//   for (let i = 0; i < arr.length - 1; i += 1) {
+//     let minValueIdx = i;
+
+//     for (let j = i + 1; j < arr.length; j += 1) {
+//       if (arr[j] < arr[minValueIdx]) {
+//         minValueIdx = j;
+//       }
+//     }
+
+//     [arr[minValueIdx], arr[i]] = [arr[i], arr[minValueIdx]];
+//   }
+
+//   return arr;
+// };
+
+// console.log(selectionSort([2, 5, 6, 2, 1, 4, 8, 5, 4, 4, 0, 7, 5, 7, 9]));
+
+const jumper = arr => {
+  let jump = arr[0];
+
+  for (let i = 0; i < arr.length; i += jump) {
+    jump = arr[i];
+    if (jump + i === arr.length - 1) {
+      return true;
+    }
+  }
+
+  return false;
+};
+
+console.log(jumper([1, 3, 2, 3, 2, 4, 5]));
