@@ -3968,25 +3968,392 @@
 
 // console.log(list.showList());
 
-const people = [
-  {
-    name: 'Olek',
-    age: 13,
-  },
-  {
-    name: 'Bogdan',
-    age: 39,
-  },
-  {
-    name: 'Olya',
-    age: 40,
-  },
-];
+// const people = [
+//   {
+//     name: 'Olek',
+//     age: 13,
+//   },
+//   {
+//     name: 'Bogdan',
+//     age: 39,
+//   },
+//   {
+//     name: 'Olya',
+//     age: 40,
+//   },
+// ];
 
-const hasPeople = new Map();
+// const hasPeople = new Map();
 
-people.forEach(({ name, age }) => hasPeople.set(name, age));
+// people.forEach(({ name, age }) => hasPeople.set(name, age));
 
-console.log(hasPeople);
+// console.log(hasPeople);
 
-console.log(hasPeople.get('Olek'));
+// console.log(hasPeople.get('Olek'));
+// let a = {};
+// let b = { key: 'b' };
+// let c = { key: 'c' };
+// let k = { key: 'c', b: 'r' };
+
+// a[b] = 123;
+// a[c] = 456;
+// a[k] = 100;
+// console.log(a);
+// console.log(a[b]);
+
+// function factorial(n) {
+//   if (n === 0) {
+//     return 1;
+//   }
+
+//   return n * factorial(n - 1);
+// }
+
+// console.log(factorial(5));
+
+// const dog = {
+//   name: {
+//     test: {
+//       foor: {
+//         name: 'spike',
+//       },
+//     },
+//   },
+//   age: 2,
+//   weigth: 23,
+// };
+
+// const cat = {
+//   name: 'spike',
+//   age: 2,
+
+//   fn: function () {
+//     console.log(this);
+//   },
+
+//   arrowFn: () => {
+//     console.log(this);
+//   },
+// };
+
+// const isOwnKey = cat.hasOwnProperty('sds');
+// console.log(isOwnKey);
+
+// function test(a) {
+//   console.log('this is varieble', a);
+//   console.log(this);
+// }
+
+// const newFn = test.bind(cat);
+// newFn(12);
+
+// console.log(dog);
+// console.log(Object.defineProperty(dog, 'name', { writable: false }));
+// console.log(Object.getOwnPropertyDescriptors(dog));
+
+// const arr = [1, 2, 3, 4, 5, 6];
+
+// const isArr = arr.find(item => item === 7);
+
+// console.log(isArr);
+
+// const arrowFn = (...arg) => {
+//   console.log(arg);
+// };
+
+// function fn(...test) {
+//   console.log(test);
+// }
+
+// arrowFn(12);
+// // fn(12);
+
+// function root() {
+//   const name = 'Bogdan';
+
+//   return age => {
+//     console.log(`${name} has ${age}`);
+//   };
+// }
+
+// const setAge = root();
+
+// setAge(15);
+
+// function fn(a, b) {
+//   if (b) {
+//     return a + b;
+//   }
+
+//   return c => a + c;
+// }
+
+// const test = fn(2);
+
+// console.log(test(10));
+
+// class Pet {
+//   constructor(name, age) {
+//     this.name = name;
+//     this.age = age;
+//     this.fn = function () {
+//       console.log(this.name);
+//     };
+//   }
+
+//   showPet() {
+//     console.log(this.name);
+//   }
+// }
+
+// const newPet = new Pet('Spike', 12);
+
+// console.log(newPet);
+
+// newPet.fn();
+
+// const isSuccess = false;
+
+// const newPromise = new Promise((resolve, reject) => {
+//   if (isSuccess) {
+//     resolve('Operation is success');
+//   } else {
+//     reject('Not success');
+//   }
+// });
+
+// console.log(newPromise);
+
+// newPromise.then(result => console.log(result)).catch(error => console.log(error));
+
+// const fn = img =>
+//   new Promise((resolve, reject) => {
+//     console.log('Request to backend');
+//     setTimeout(() => {
+//       const isSuccess = false;
+
+//       if (isSuccess) {
+//         resolve(`${img} is here`);
+//       } else {
+//         reject('reject requiest');
+//       }
+//     }, 2000);
+//   });
+
+// fn('Cat')
+//   .then(result => console.log(result))
+//   .catch(error => console.log(error));
+
+// const arr = [1, 2, 3, 4, 5, 1, 2, 3, 4, 8, 7];
+
+// const filteredSet = new Set(arr);
+
+// const filteredCustom = arr.filter((item, index, array) => index === array.lastIndexOf(item));
+
+// console.log(1 + '10');
+
+// const obj = {
+//   name: 'Hello',
+//   fn: function () {
+//     const fun = () => {
+//       console.log(this.name);
+//     };
+
+//     fun();
+//   },
+// };
+
+// obj.fn();
+
+// const kite = [
+//   { name: 'core', size: '12' },
+//   { name: 'Sling', size: 10 },
+// ];
+
+// const obj = kite.reduce((obj, item) => {
+//   obj[item.name] = item;
+//   return obj;
+// }, {});
+
+// console.log(obj);
+
+// const arr = [1, 2, 3, 4, 5, 6, [3, 4, 5, [1, 2, 3, 4], 4, 5, 6]];
+// const newArr = [];
+
+// const flatArr = arr => {
+//   arr.forEach(item => {
+//     if (!Array.isArray(item)) {
+//       newArr.push(item);
+//     } else {
+//       flatArr(item);
+//     }
+//   });
+// };
+
+// flatArr(arr);
+
+// console.log(newArr);
+
+// const fn = () =>
+//   new Promise(resolve => {
+//     setTimeout(() => {
+//       resolve('Success');
+//     }, 1000);
+//   });
+
+// const asyncFn = async fn => {
+//   const result = await fn();
+//   console.log(result);
+//   return result;
+// };
+// asyncFn(fn);
+
+// function evenOrOdd(...arr) {
+//   const obj = arr.reduce(
+//     (obj, num) => (num % 2 === 0 ? { ...obj, even: 'even' } : { ...obj, odd: 'odd' }),
+//     { odd: false, even: false }
+//   );
+
+//   return `${obj.even ? obj.even : ''}${obj.even && obj.odd ? '/' : ''}${obj.odd ? obj.odd : ''}`;
+// }
+
+// console.log(evenOrOdd(3, 2, 4));
+// function oddEvenNumber(num) {
+//   return [...num.toString()].reduce(
+//     (obj, item) => {
+//       if (item % 2 === 0) {
+//         obj = { ...obj, even: obj.even + 1 };
+//       } else {
+//         obj = { ...obj, odd: obj.odd + 1 };
+//       }
+//       return obj;
+//     },
+//     { odd: 0, even: 0 }
+//   );
+// }
+
+// console.log(oddEvenNumber(1234)); // { odd: 2, even: 2 }
+
+// return [...str].reduce((obj, item) => {
+//   obj[item] = (obj[item] || 0) + 1;
+//   return obj;
+// }, {});
+
+// const items = [
+//   { id: 1, date: '2024-03-01', price: 20 },
+//   { id: 2, date: '2024-03-02', price: 30 },
+//   { id: 3, date: '2024-03-03', price: 15 },
+//   { id: 4, date: '2024-03-02', price: 25 },
+// ];
+
+// items.sort((a, b) => {
+//   const dateComparison = new Date(a.date).getTime() - new Date(b.date).getTime();
+//   if (dateComparison !== 0) {
+//     return dateComparison;
+//   }
+
+//   return a.price - b.price;
+// });
+
+// console.log(items);
+
+// const sortObjects = (array, sortProperties) => {
+//   const prepSortProp = sortProperties.reduce((arr, item) => {
+//     const prop = Object.entries(item)[0];
+//     console.log(prop);
+//     if (prop[1] === '') {
+//       return arr;
+//     }
+
+//     prop[1] = prop[1] === 'ascending' ? 1 : -1;
+
+//     return (arr = [...arr, prop]);
+//   }, []);
+
+//   console.log('prepSort', prepSortProp);
+
+//   return array.toSorted((a, b) => {
+//     for (let prop of prepSortProp) {
+//       console.log('a[prop]', a[prop[0]]);
+//       console.log('b[prop]', b[prop[0]]);
+//       if (a[prop[0]] !== b[prop[0]]) {
+//         return a[prop[0]] < b[prop[0]] ? prop[1] * -1 : prop[1];
+//       }
+//     }
+//     return 0;
+//   });
+// };
+
+// // Пример использования:
+// const medicines = [
+//   { id: 1, name: 'Medicine A', price: 20, dateAdded: '2024-03-01' },
+//   { id: 2, name: 'Medicine B', price: 15, dateAdded: '2024-03-02' },
+//   { id: 3, name: 'Medicine C', price: 25, dateAdded: '2024-03-01' },
+//   { id: 4, name: 'Medicine A', price: 20, dateAdded: '2024-03-03' },
+//   { id: 5, name: 'Medicine C', price: 10, dateAdded: '2024-03-02' },
+// ];
+
+// const fav = [1, 3, 4];
+
+// const medicinesFav = medicines.map(item =>
+//   fav.includes(item.id) ? { ...item, fav: 0 } : { ...item, fav: 1 }
+// );
+// console.log(medicinesFav);
+
+// // Сортировка сначала по цене, а затем по дате добавления
+// console.log(
+//   sortObjects(medicinesFav, [{ fav: 'ascending' }, { price: 'desending' }, { dateAdded: '' }])
+// );
+
+// // Сортировка сначала по дате добавления, а затем по цене
+// // console.log(sortObjects(medicinesFav, ['fav', 'dateAdded', 'price'])
+
+// const setLowerCase = str => str.toLowerCase();
+
+// const setLastSymbolUpper = str =>
+//   [...str]
+//     .map((item, index, arr) => (arr.length - 1 !== index ? item : item.toUpperCase()))
+//     .join('');
+
+// const compose =
+//   (...arrFunc) =>
+//   str =>
+//     arrFunc.reduce((result, func) => (result = func(result)), str);
+
+// const handleString = compose(setLowerCase, setLastSymbolUpper);
+
+// console.log(handleString('WERTYUIOP'));
+
+// const multiplyNum = (x, y) => {
+//   if (x && y) {
+//     return x * y;
+//   }
+
+//   return z => multiplyNum(x, z);
+// };
+
+// console.log(multiplyNum(2)(8));
+
+// білки * 4 + жири * 9 + вуглеводи * 4;
+
+// const calcCallories = (prot, fat) => {
+//   return carbon => prot * fat * carbon;
+// };
+
+// const calcAll = calcCallories(2, 3);
+
+// console.log(calcAll(10));
+
+// const getData = turn =>
+//   new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (turn === 1) {
+//         return resolve('Ok');
+//       }
+//       reject('Error');
+//     }, 2000);
+//   });
+
+// getData(0)
+//   .then(item => console.log(item))
+//   .catch(error => console.log(error));
