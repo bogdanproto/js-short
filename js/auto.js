@@ -4407,17 +4407,39 @@
 
 // console.log(selectionSort([2, 5, 6, 2, 1, 4, 8, 5, 4, 4, 0, 7, 5, 7, 9]));
 
-const jumper = arr => {
-  let jump = arr[0];
+// function quicksort(arr) {
+//   if (arr.length <= 1) {
+//     return arr;
+//   }
 
-  for (let i = 0; i < arr.length; i += jump) {
-    jump = arr[i];
-    if (jump + i === arr.length - 1) {
-      return true;
+//   const pivot = arr[Math.floor(arr.length / 2)];
+//   const left = arr.filter(x => x < pivot);
+//   const middle = arr.filter(x => x === pivot);
+//   const right = arr.filter(x => x > pivot);
+
+//   return [...quicksort(left), ...middle, ...quicksort(right)];
+// }
+
+// const result = quicksort([5, 3, 8, 4, 2]);
+// console.log(result); // Виведе: [2, 3, 4, 5, 8]
+
+const binarySearch = (arr, x) => {
+  let mid = null;
+  let startIdx = 0;
+  let endIdx = arr.length - 1;
+
+  while (startIdx <= endIdx) {
+    mid = Math.floor((endIdx + startIdx) / 2);
+
+    if (x < arr[mid]) {
+      endIdx = mid - 1;
+    } else if (x > arr[mid]) {
+      startIdx = mid + 1;
+    } else {
+      return mid;
     }
   }
-
-  return false;
+  return -1;
 };
 
-console.log(jumper([1, 3, 2, 3, 2, 4, 5]));
+console.log(binarySearch([1, 3, 5, 8, 10, 12, 15, 18, 20, 22, 24], 16));
