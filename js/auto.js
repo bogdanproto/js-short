@@ -4423,23 +4423,161 @@
 // const result = quicksort([5, 3, 8, 4, 2]);
 // console.log(result); // Виведе: [2, 3, 4, 5, 8]
 
-const binarySearch = (arr, x) => {
-  let mid = null;
-  let startIdx = 0;
-  let endIdx = arr.length - 1;
+// const binarySearch = (arr, x) => {
+//   let mid = null;
+//   let startIdx = 0;
+//   let endIdx = arr.length - 1;
 
-  while (startIdx <= endIdx) {
-    mid = Math.floor((endIdx + startIdx) / 2);
+//   while (startIdx <= endIdx) {
+//     mid = Math.floor((endIdx + startIdx) / 2);
 
-    if (x < arr[mid]) {
-      endIdx = mid - 1;
-    } else if (x > arr[mid]) {
-      startIdx = mid + 1;
+//     if (x < arr[mid]) {
+//       endIdx = mid - 1;
+//     } else if (x > arr[mid]) {
+//       startIdx = mid + 1;
+//     } else {
+//       return mid;
+//     }
+//   }
+//   return -1;
+// };
+
+// console.log(binarySearch([1, 3, 5, 8, 10, 12, 15, 18, 20, 22, 24], 16));
+
+// function isIsogram(str) {
+//   return !Boolean(
+//     Array.from(str.toLowerCase()).find(
+//       (char, _, arr) => arr.indexOf(char) !== arr.lastIndexOf(char)
+//     )
+//   );
+// }
+
+// console.log(isIsogram('Dermatoglyphics'));
+
+// const transformArr = arr => {
+//   return arr.reduce((obj, item) => {
+//     if (item.age > 17) {
+//       if (!obj[item.groupId]) {
+//         obj[item.groupId] = [];
+//       }
+//       obj[item.groupId] = [...obj[item.groupId], item];
+//       return obj;
+//     }
+
+//     return obj;
+//   }, {});
+// };
+
+// console.log(
+//   transformArr([
+//     { name: 'Bogdan', age: 39, groupId: 1 },
+//     { name: 'Olya', age: 40, groupId: 1 },
+//     { name: 'Olek', age: 14, groupId: 2 },
+//     { name: 'Olek23', age: 23, groupId: 2 },
+//   ])
+// );
+
+// const customMap = (arr, callback) => {
+//   for (let i = 0; i < arr.length; i += 1) {
+//     arr[i] = callback(arr[i]);
+//   }
+
+//   return arr;
+// };
+
+// const multiply = num => num * 2;
+
+// console.log(customMap([1, 4, 2, 6, 3, 9], multiply));
+
+// const isPolindrom = str => {
+//   str = str.toLowerCase().replaceAll(' ', '');
+
+//   return str === Array.from(str).reverse().join('');
+// };
+
+// console.log(isPolindrom('Never odd or even'));
+
+// const users = [
+//   { id: 'id1a', name: 'Livvi Doe', location: 'Michigan' },
+//   { id: 'id2b', name: 'Jane Doe', location: 'Alabama' },
+//   { id: 'id3c', name: 'Sean Doe', location: 'Michigan' },
+//   { id: 'id4d', name: 'Kate Doe', location: 'California' },
+// ];
+// const online = [
+//   { id: 'id1a', isOnline: false },
+//   { id: 'id3c', isOnline: true },
+//   { id: 'id5e', isOnline: false },
+//   { id: 'id4d', isOnline: true },
+// ];
+
+// const isOnline = (users, arrOnline) => {
+//   const arrIdOnline = arrOnline.reduce((acc, { id, isOnline }) => {
+//     if (isOnline) {
+//       acc = [...acc, id];
+//       return acc;
+//     }
+//     return acc;
+//   }, []);
+//   return users.filter(({ id }) => arrIdOnline.includes(id));
+// };
+
+// console.log(isOnline(users, online));
+
+// const rangeSum = (x, y) => {
+//   if (x === y) {
+//     return x;
+//   }
+
+//   return x + rangeSum(x + 1, y);
+// };
+
+// console.log(rangeSum(5, 10));
+
+// function removeDuplicate(arr) {
+//   // Your implementation here
+
+//   return arr.filter((item, index, arr) => index === arr.lastIndexOf(item));
+// }
+
+// console.log(removeDuplicate([1, 1, 1, 2, 3, 3]));
+
+const fetchData = async path =>
+  new Promise((resolve, reject) => {
+    setTimeout(() => {
+      if (path === 'getPath1') {
+        resolve('dataPath1');
+      } else if (path === 'getPath2') {
+        resolve('dataPath2');
+      } else {
+        reject('error');
+      }
+    }, 1000);
+  });
+
+const memoFn = fetchFn => {
+  const store = {};
+  return async path => {
+    if (!store[path]) {
+      const data = await fetchFn(path);
+      store[path] = data;
+      console.log('this is fetch', store);
+      return data;
     } else {
-      return mid;
+      console.log('this is casch', store);
+      return store[path];
     }
-  }
-  return -1;
+  };
 };
 
-console.log(binarySearch([1, 3, 5, 8, 10, 12, 15, 18, 20, 22, 24], 16));
+const memorizedFetch = memoFn(fetchData);
+
+console.log(memorizedFetch);
+
+const fetching = async () => {
+  const data = await memorizedFetch('getPath1');
+  console.log(data);
+  const data2 = await memorizedFetch('getPath2');
+  console.log(data2);
+};
+
+fetching();
