@@ -4541,43 +4541,100 @@
 
 // console.log(removeDuplicate([1, 1, 1, 2, 3, 3]));
 
+// const fetchData = async path =>
+//   new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (path === 'getPath1') {
+//         resolve('dataPath1');
+//       } else if (path === 'getPath2') {
+//         resolve('dataPath2');
+//       } else {
+//         reject('error');
+//       }
+//     }, 1000);
+//   });
+
+// const memoFn = fetchFn => {
+//   const store = {};
+//   return async path => {
+//     if (!store[path]) {
+//       const data = await fetchFn(path);
+//       store[path] = data;
+//       console.log('this is fetch', store);
+//       return data;
+//     } else {
+//       console.log('this is casch', store);
+//       return store[path];
+//     }
+//   };
+// };
+
+// const memorizedFetch = memoFn(fetchData);
+
+// console.log(memorizedFetch);
+
+// const fetching = async () => {
+//   const data = await memorizedFetch('getPath1');
+//   console.log(data);
+//   const data2 = await memorizedFetch('getPath2');
+//   console.log(data2);
+// };
+
+// fetching();
+
+// const fib = (n, memo) => {
+//   memo = memo || {};
+
+//   if (memo[n]) {
+//     return memo[n];
+//   }
+
+//   if (n <= 1) {
+//     return 1;
+//   }
+
+//   return (memo[n] = fib(n - 1, memo) + fib(n - 2, memo));
+// };
+
+// console.log(fib(8));
+
 const fetchData = async path =>
   new Promise((resolve, reject) => {
     setTimeout(() => {
-      if (path === 'getPath1') {
-        resolve('dataPath1');
-      } else if (path === 'getPath2') {
-        resolve('dataPath2');
+      if (path === 'path1') {
+        resolve('dataFromBase');
       } else {
         reject('error');
       }
     }, 1000);
   });
 
-const memoFn = fetchFn => {
-  const store = {};
-  return async path => {
-    if (!store[path]) {
-      const data = await fetchFn(path);
-      store[path] = data;
-      console.log('this is fetch', store);
+const memoFn = fn => {
+  const cash = {};
+
+  return async key => {
+    if (!cash[key]) {
+      const data = await fn(key);
+      cash[key] = data;
       return data;
     } else {
-      console.log('this is casch', store);
-      return store[path];
+      console.log('cash');
+      return cash[key];
     }
   };
 };
 
-const memorizedFetch = memoFn(fetchData);
-
-console.log(memorizedFetch);
-
 const fetching = async () => {
-  const data = await memorizedFetch('getPath1');
+  const memorizedFetch = memoFn(fetchData);
+
+  const data = await memorizedFetch('path1');
   console.log(data);
-  const data2 = await memorizedFetch('getPath2');
+
+  const data2 = await memorizedFetch('path1');
   console.log(data2);
+
+  const data3 = await memorizedFetch('path1');
+  console.log(data3);
 };
 
 fetching();
