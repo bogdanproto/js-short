@@ -4598,43 +4598,89 @@
 
 // console.log(fib(8));
 
-const fetchData = async path =>
-  new Promise((resolve, reject) => {
-    setTimeout(() => {
-      if (path === 'path1') {
-        resolve('dataFromBase');
-      } else {
-        reject('error');
-      }
-    }, 1000);
-  });
+// const fetchData = async path =>
+//   new Promise((resolve, reject) => {
+//     setTimeout(() => {
+//       if (path === 'path1') {
+//         resolve('dataFromBase');
+//       } else {
+//         reject('error');
+//       }
+//     }, 1000);
+//   });
 
-const memoFn = fn => {
-  const cash = {};
+// const memoFn = fn => {
+//   const cash = {};
 
-  return async key => {
-    if (!cash[key]) {
-      const data = await fn(key);
-      cash[key] = data;
-      return data;
-    } else {
-      console.log('cash');
-      return cash[key];
-    }
-  };
-};
+//   return async key => {
+//     if (!cash[key]) {
+//       const data = await fn(key);
+//       cash[key] = data;
+//       return data;
+//     } else {
+//       console.log('cash');
+//       return cash[key];
+//     }
+//   };
+// };
 
-const fetching = async () => {
-  const memorizedFetch = memoFn(fetchData);
+// const fetching = async () => {
+//   const memorizedFetch = memoFn(fetchData);
 
-  const data = await memorizedFetch('path1');
-  console.log(data);
+//   const data = await memorizedFetch('path1');
+//   console.log(data);
 
-  const data2 = await memorizedFetch('path1');
-  console.log(data2);
+//   const data2 = await memorizedFetch('path1');
+//   console.log(data2);
 
-  const data3 = await memorizedFetch('path1');
-  console.log(data3);
-};
+//   const data3 = await memorizedFetch('path1');
+//   console.log(data3);
+// };
 
-fetching();
+// fetching();
+
+// const source = [1, 2, 3, 5, 1, 5, 9, 1, 2, 8];
+
+// const handleDublicate = arr => arr.filter((item, idx, arr) => idx !== arr.lastIndexOf(item));
+
+// console.log(handleDublicate(source));
+
+// async function asyncObjectMap(obj, callback) {
+//   const keysArr = Object.keys(obj);
+//   const newObj = {};
+
+//   for (const key of keysArr) {
+//     newObj[key] = await callback(obj[key]);
+//   }
+
+//   return newObj;
+// }
+
+// const fn = async () => {
+//   const data = await asyncObjectMap({ qwe: 123, fds: 32 }, async x => x * 2);
+//   console.log(data);
+// };
+
+// fn();
+
+// => { qwe: 246, fds: 64 }
+
+function findPath(mountain) {
+  const mClone = [...mountain];
+  const height = mClone.length - 1;
+
+  for (let level = height - 1; level >= 0; level -= 1) {
+    mClone[level] = mClone[level].map(
+      (path, idx) =>
+        path +
+        Math.max(
+          !isNaN(mClone[level + 1][idx]) ? mClone[level + 1][idx] : 0,
+          !isNaN(mClone[level + 1][idx + 1]) ? mClone[level + 1][idx + 1] : 0
+        )
+    );
+  }
+
+  return mClone[0][0];
+}
+
+console.log(findPath([[6], [7, 10], [12, 11, 9], ['d', 25, 13, 14]]));
