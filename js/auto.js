@@ -4665,22 +4665,63 @@
 
 // => { qwe: 246, fds: 64 }
 
-function findPath(mountain) {
-  const mClone = [...mountain];
-  const height = mClone.length - 1;
+// function findPath(mountain) {
+//   const mClone = [...mountain];
+//   const height = mClone.length - 1;
 
-  for (let level = height - 1; level >= 0; level -= 1) {
-    mClone[level] = mClone[level].map(
-      (path, idx) =>
-        path +
-        Math.max(
-          !isNaN(mClone[level + 1][idx]) ? mClone[level + 1][idx] : 0,
-          !isNaN(mClone[level + 1][idx + 1]) ? mClone[level + 1][idx + 1] : 0
-        )
-    );
+//   for (let level = height - 1; level >= 0; level -= 1) {
+//     mClone[level] = mClone[level].map(
+//       (path, idx) =>
+//         path +
+//         Math.max(
+//           !isNaN(mClone[level + 1][idx]) ? mClone[level + 1][idx] : 0,
+//           !isNaN(mClone[level + 1][idx + 1]) ? mClone[level + 1][idx + 1] : 0
+//         )
+//     );
+//   }
+
+//   return mClone[0][0];
+// }
+
+// console.log(findPath([[6], [7, 10], [12, 11, 9], ['d', 25, 13, 14]]));
+
+class MacBook {
+  constructor() {
+    this.price = 970;
+    this.screen = 11;
   }
 
-  return mClone[0][0];
+  cost() {
+    return this.price;
+  }
+
+  screenSize() {
+    this.screen;
+  }
 }
 
-console.log(findPath([[6], [7, 10], [12, 11, 9], ['d', 25, 13, 14]]));
+let decorator = (() => {
+  const memory = function (macbook) {
+    const v = macbook.cost();
+    macbook.cost = () => v + 30;
+  };
+
+  const insurance = function (macbook) {
+    const v = macbook.cost();
+    macbook.cost = () => v + 500;
+  };
+
+  return {
+    decorate(macbook) {
+      memory(macbook);
+      insurance(macbook);
+    },
+  };
+})();
+
+let macbook = new MacBook();
+
+decorator.decorate(macbook);
+
+console.log(macbook);
+console.log(macbook.cost());
