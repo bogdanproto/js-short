@@ -4685,43 +4685,58 @@
 
 // console.log(findPath([[6], [7, 10], [12, 11, 9], ['d', 25, 13, 14]]));
 
-class MacBook {
-  constructor() {
-    this.price = 970;
-    this.screen = 11;
+// class MacBook {
+//   constructor() {
+//     this.price = 970;
+//     this.screen = 11;
+//   }
+
+//   cost() {
+//     return this.price;
+//   }
+
+//   screenSize() {
+//     this.screen;
+//   }
+// }
+
+// let decorator = (() => {
+//   const memory = function (macbook) {
+//     const v = macbook.cost();
+//     macbook.cost = () => v + 30;
+//   };
+
+//   const insurance = function (macbook) {
+//     const v = macbook.cost();
+//     macbook.cost = () => v + 500;
+//   };
+
+//   return {
+//     decorate(macbook) {
+//       memory(macbook);
+//       insurance(macbook);
+//     },
+//   };
+// })();
+
+// let macbook = new MacBook();
+
+// decorator.decorate(macbook);
+
+// console.log(macbook);
+// console.log(macbook.cost());
+
+function jumper(arr) {
+  let jumpPosition = 0;
+
+  while (jumpPosition < arr.length) {
+    if (arr[jumpPosition] === arr.length - 1 - jumpPosition) {
+      return true;
+    }
+    jumpPosition = jumpPosition + arr[jumpPosition];
   }
 
-  cost() {
-    return this.price;
-  }
-
-  screenSize() {
-    this.screen;
-  }
+  return false;
 }
 
-let decorator = (() => {
-  const memory = function (macbook) {
-    const v = macbook.cost();
-    macbook.cost = () => v + 30;
-  };
-
-  const insurance = function (macbook) {
-    const v = macbook.cost();
-    macbook.cost = () => v + 500;
-  };
-
-  return {
-    decorate(macbook) {
-      memory(macbook);
-      insurance(macbook);
-    },
-  };
-})();
-
-let macbook = new MacBook();
-
-decorator.decorate(macbook);
-
-console.log(macbook);
-console.log(macbook.cost());
+console.log(jumper([1, 1, 3, 6, 7, 8, 9]));
